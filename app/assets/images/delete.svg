@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.92 35.92">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: red;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_42" data-name="Group 42" transform="translate(-8750 -928)">
+    <circle id="Ellipse_29" data-name="Ellipse 29" class="cls-1" cx="17.96" cy="17.96" r="17.96" transform="translate(8750 928)"/>
+    <g id="plus" transform="translate(8753.499 945.976) rotate(-45)">
+      <g id="Group_46" data-name="Group 46">
+        <g id="Group_45" data-name="Group 45">
+          <g id="Group_44" data-name="Group 44">
+            <g id="Group_43" data-name="Group 43">
+              <g id="Group_42-2" data-name="Group 42">
+                <path id="Path_16" data-name="Path 16" class="cls-2" d="M17.483,7.4h-4.7v-4.7a2.691,2.691,0,1,0-5.382,0V7.4h-4.7a2.689,2.689,0,1,0,0,5.378H7.4v4.709a2.691,2.691,0,1,0,5.382,0V12.778h4.709A2.691,2.691,0,1,0,17.483,7.4Z"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

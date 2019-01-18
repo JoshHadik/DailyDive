@@ -1,0 +1,32 @@
+.journal {
+  min-height: 500px;
+  max-height: 800px;
+  position: relative;
+  padding-top: 80px;
+}
+
+.journal-title {
+  font-weight: 800;
+  font-size: 3.5em;
+}
+
+.journal-caption {
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.actions .icon-button {
+  vertical-align: middle;
+  margin-left: 50px;
+}
+
+.actions .icon-button:first-of-type {
+  margin-left: 0px;
+}
+
+.actions {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+}

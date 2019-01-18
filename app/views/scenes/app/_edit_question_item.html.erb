@@ -1,0 +1,8 @@
+<li class='edit-question-item'>
+  <p class="list-item-content">
+    <%= link_to resource_question_path(question), method: :delete, class: "delete-question-button", remote: true do %>
+      <%= image_tag("delete.svg") %>
+    <% end %>
+    <%= editable_text(question, :body, placeholder: "Enter question...") %>
+  </p>
+</li>

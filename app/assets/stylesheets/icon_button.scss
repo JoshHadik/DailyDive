@@ -1,0 +1,54 @@
+// Default
+
+.icon-button {
+  width: 75px;
+  display: inline-block;
+  color: white;
+}
+
+.icon-button:hover {
+  background-color: initial;
+}
+
+.icon-button--image {
+  background-color: white;
+  border-radius: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 75px;
+}
+
+.icon-button--image img {
+  margin-top: 25%;
+  max-height: 50%;
+  max-width: 50%;
+}
+
+.icon-button--text {
+  font-weight: 600;
+}
+
+// Large
+
+.icon-button.large {
+  width: 100px;
+}
+
+.icon-button.large .icon-button--image {
+  height: 100px;
+}
+
+.icon-button.large .icon-button--text {
+  font-size: 1.5em;
+}
+
+// Dull
+
+.icon-button.dull {
+  opacity: 0.5;
+}
+
+.icon-button.dull:hover {
+  opacity: 1;
+}

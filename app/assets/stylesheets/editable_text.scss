@@ -1,0 +1,47 @@
+.editable-text-container {
+  display: inline-block;
+}
+
+.editable-text {
+  cursor: pointer;
+  display: block;
+  white-space: pre-line;
+  position: relative;
+  min-width: 20px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.editable-text:focus {
+  cursor: text;
+  outline: 1px solid gray;
+}
+
+.editable-text[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #878787;
+  font-style: italic;
+}
+
+.editable-text[placeholder]:empty:focus::before {
+  content: "";
+}
+
+// .editable-text:before {
+//   content: "";
+//   background-image: url(asset_path("pencil.svg"));
+//   background-size: 20px;
+//   vertical-align: -50%;
+//   width: 20px;
+//   height: 20px;
+//   font-size: 0.2em;
+//   z-index: 2;
+//   top: 25%;
+//   position: absolute;
+//   left: -30px;
+//   // line-height: 100%;
+// }
+//
+// .editable-text:after:hover {
+//   color: red;
+// }

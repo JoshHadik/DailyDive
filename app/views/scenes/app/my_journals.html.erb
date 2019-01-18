@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Your Journals </h1>
+
+<% @journals.each do |journal| %>
+  <%= link_to scenes_journal_path(journal) do %>
+    <%= journal.title %> -
+    <%= journal.caption %>
+  <% end %>
+<% end %>
+
+<%= render partial: '/scenes/partials/new_journal',
+    locals: { journal: @new_journal } %>
