@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   end
 
   scope module: :scenes, as: 'scenes' do
-    get 'journals/:id', to: 'app#journal', as: 'journal'
+    get 'journal/:id', to: 'journal#scene', as: 'journal'
+    post 'journal/:id/add_question/',
+         to: 'journal#add_question',
+         as: 'journal_add_question'
   end
 
 
