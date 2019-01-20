@@ -17,12 +17,12 @@ Rails.application.routes.draw do
          as: 'journal_add_question'
 
     get 'journal/:id/go', to: 'active_journal#scene', as: 'active_journal'
-    post 'journal/:id/go/next_question/',
-         to: 'active_journal#next_question',
-         as: 'active_journal_next_question'
-    post 'journal/:id/go/previous_question/',
-        to: 'active_journal#previous_question',
-        as: 'active_journal_previous_question'
+    post 'journal/:id/go/next/',
+         to: 'active_journal#next',
+         as: 'active_journal_next'
+    post 'journal/:id/go/previous/',
+        to: 'active_journal#previous',
+        as: 'active_journal_previous'
 
     get 'journal/:id/entry/:entry_id', to: 'journal_entry#scene', as: 'journal_entry'
   end

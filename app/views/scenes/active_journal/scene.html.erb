@@ -16,9 +16,9 @@
         </div>
       <% end %>
 
-      <%= link_to scenes_active_journal_previous_question_path(@journal,
+      <%= link_to scenes_active_journal_previous_path(@journal,
                     entry: params[:entry],
-                    response: params[:response]),
+                    question: params[:question]),
           method: :post, remote: true,
           class: "icon-button dark previous" do %>
         <div class="icon-button--image">
@@ -26,9 +26,9 @@
         </div>
       <% end %>
 
-      <%= link_to scenes_active_journal_next_question_path(@journal,
+      <%= link_to scenes_active_journal_next_path(@journal,
                     entry: params[:entry],
-                    response: params[:response]),
+                    question: params[:question]),
           method: :post, remote: true,
           class: "icon-button dark next" do %>
         <div class="icon-button--image">

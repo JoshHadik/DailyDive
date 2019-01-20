@@ -1,41 +1,74 @@
 class Scenes::ActiveJournalController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_journal
+  before_action :set_entry, only: [ :previous, :next ]
 
   def scene
-    if params[:entry]
-      @journal = Journal.find(params[:id])
-      @entry = @journal.entries.find(params[:entry])
-      @response = @entry.responses.find_by(position: params[:response])
+    if journal_in_progress?
+      set_entry and set_response
     else
-      start_new_entry
+      new_entry and redirect_to_first_question
     end
   end
 
-  def start_new_entry
-    @journal = Journal.find(params[:id])
-    @entry = @journal.create_entry
-
-    redirect_to scenes_active_journal_path(@journal, entry: @entry.id, response: 1)
-  end
-
-  def next_question
-    @journal = Journal.find(params[:id])
-    @entry = @journal.entries.find(params[:entry])
-
-    next_response = params[:response].to_i + 1
-
-    if @entry.responses.order(position: :asc).last.position >= next_response
-      redirect_to scenes_active_journal_path(@journal, entry: @entry.id, response: (next_response))
-    else
+  def next
+    if on_last_question?
       redirect_to scenes_journal_entry_path(@journal, @entry)
+    else
+      redirect_to_question(+1)
     end
   end
 
-  def previous_question
-    @journal = Journal.find(params[:id])
-    @entry = @journal.entries.find(params[:entry])
-
-    redirect_to scenes_active_journal_path(@journal, entry: @entry.id, response: (params[:response].to_i - 1))
+  def previous
+    if on_first_question?
+      redirect_to scenes_journal_path(@journal)
+    else
+      redirect_to_question(-1)
+    end
   end
 
+  private
+
+  def set_journal
+    @journal = Journal.find(params[:id])
+  end
+
+  def new_entry
+    @entry = @journal.create_entry
+  end
+
+  def set_entry
+    @entry = @journal.entries.find(params[:entry])
+  end
+
+  def set_response
+    @response = @entry.responses.find_by(position: params[:question])
+  end
+
+  def journal_in_progress?
+    params[:entry]
+  end
+
+  def redirect_to_first_question
+    redirect_to scenes_active_journal_path(@journal, entry: @entry.id, question: 1)
+  end
+
+  def on_first_question?
+    params[:question].to_i == 1
+  end
+
+  def on_last_question?
+    last_question.position == params[:question].to_i
+  end
+
+  def last_question
+    @entry.responses.order(position: :asc).last
+  end
+
+  def redirect_to_question(val)
+    redirect_to scenes_active_journal_path(@journal, {
+      entry: @entry.id,
+      question: params[:question].to_i + val
+    })
+  end
 end
