@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require editable_text/js
+//= require dynamic_text/js
 //= require jquery
 //= require rails-ujs
 //= require activestorage
