@@ -21,13 +21,26 @@ class Scenes::ActiveJournalController < ApplicationController
 
   def previous
     if on_first_question?
-      redirect_to scenes_journal_path(@journal)
+      exit_entry
     else
       redirect_to_question(-1)
     end
   end
 
+  def exit_entry
+    should_delete_entry = true
+    @entry.responses.each do |response|
+      should_delete_entry = false if !response.body.nil?
+    end
+    delete_entry if should_delete_entry
+    redirect_to scenes_journal_path(@journal)
+  end
+
   private
+
+  def delete_entry
+    @entry.destroy
+  end
 
   def set_journal
     @journal = Journal.find(params[:id])
