@@ -39,6 +39,9 @@ gem 'jquery-rails'
 # Use devise for authentication
 gem 'devise'
 
+# Use text_editable gem
+gem 'editable_text', "~> 0.0.2"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

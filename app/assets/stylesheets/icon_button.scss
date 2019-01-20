@@ -52,3 +52,9 @@
 .icon-button.dull:hover {
   opacity: 1;
 }
+
+// Dark
+
+.icon-button.dark .icon-button--image {
+  background-color: #3100FD;
+}

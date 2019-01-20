@@ -1,9 +1,10 @@
 class Scenes::JournalController < ApplicationController
-  before_action :authenticate_resource_user!
+  before_action :authenticate_user!
 
   def scene
     @journal = Journal.find(params[:id])
     @questions = @journal.questions.order(:id)
+    @entries = @journal.entries.order(created_at: :desc)
     @new_question = Question.new
   end
 
@@ -20,7 +21,7 @@ class Scenes::JournalController < ApplicationController
       end
     end
   end
-  
+
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def question_params

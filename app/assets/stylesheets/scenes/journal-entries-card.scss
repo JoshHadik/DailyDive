@@ -1,0 +1,60 @@
+
+// Edit Questions List
+
+.journal-entries {
+  font-size: 1.2em;
+  display: inline-block;
+  text-align: left;
+  list-style-type: none;
+  width: 100%;
+  top: 0;
+  margin-top: 50px;
+  vertical-align: text-top;
+  overflow-x: scroll;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  padding-right: 1px;
+  padding-top: 1px;
+}
+
+// Edit Questions List Item
+
+.journal-entry-item {
+  padding-left: 35px;
+  position: relative;
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  vertical-align: bottom !important;
+}
+
+.journal-entry-item .list-item-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.journal-entry-item a:hover {
+  color: #05A2E3;
+}
+
+// Delete Question Button
+
+.journal-entry-item.active {
+  list-style-type: none;
+}
+
+.journal-entry-item .delete-entry-button {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+.journal-entry-item:hover .delete-entry-button {
+  display: block;
+}
+
+.journal-entry-item.active .delete-entry-button {
+  display: block;
+}

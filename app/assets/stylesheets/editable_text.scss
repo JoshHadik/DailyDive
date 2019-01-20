@@ -1,31 +1,31 @@
-.editable-text-container {
-  display: inline-block;
-}
-
-.editable-text {
-  cursor: pointer;
-  display: block;
-  white-space: pre-line;
-  position: relative;
-  min-width: 20px;
-  padding-bottom: 5px;
-  box-sizing: border-box;
-}
-
-.editable-text:focus {
-  cursor: text;
-  outline: 1px solid gray;
-}
-
-.editable-text[placeholder]:empty::before {
-  content: attr(placeholder);
-  color: #878787;
-  font-style: italic;
-}
-
-.editable-text[placeholder]:empty:focus::before {
-  content: "";
-}
+// .editable-text-container {
+//   display: inline-block;
+// }
+//
+// .editable-text {
+//   cursor: pointer;
+//   display: block;
+//   white-space: pre-line;
+//   position: relative;
+//   min-width: 20px;
+//   padding-bottom: 5px;
+//   box-sizing: border-box;
+// }
+//
+// .editable-text:focus {
+//   cursor: text;
+//   outline: 1px solid gray;
+// }
+//
+// .editable-text[placeholder]:empty::before {
+//   content: attr(placeholder);
+//   color: #878787;
+//   font-style: italic;
+// }
+//
+// .editable-text[placeholder]:empty:focus::before {
+//   content: "";
+// }
 
 // .editable-text:before {
 //   content: "";

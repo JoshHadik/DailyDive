@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  root 'scenes/app#my_journals'
+  root 'scenes/my_journals#scene'
+
+  devise_for :users
 
   scope '/resources', module: :resources, as: 'resource' do
-    devise_for :users
-
-    resources :questions
     resources :journals
+    resources :questions
+    resources :responses
+    resources :entries
   end
 
   scope module: :scenes, as: 'scenes' do
@@ -13,6 +15,16 @@ Rails.application.routes.draw do
     post 'journal/:id/add_question/',
          to: 'journal#add_question',
          as: 'journal_add_question'
+
+    get 'journal/:id/go', to: 'active_journal#scene', as: 'active_journal'
+    post 'journal/:id/go/next_question/',
+         to: 'active_journal#next_question',
+         as: 'active_journal_next_question'
+    post 'journal/:id/go/previous_question/',
+        to: 'active_journal#previous_question',
+        as: 'active_journal_previous_question'
+
+    get 'journal/:id/entry/:entry_id', to: 'journal_entry#scene', as: 'journal_entry'
   end
 
 

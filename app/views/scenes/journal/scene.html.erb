@@ -1,12 +1,12 @@
 <div class="flex-container">
-  <div class="journal">
+  <div class="journal flex-content">
 
     <h1 class="h1-like journal-title">
-      <%= editable_text(@journal, :title) %>
+      <%= editable_text_for(@journal, :title) %>
     </h1>
-    
+
     <p class="journal-caption">
-      <%= editable_text(@journal, :caption, placeholder: "Enter a caption for your journal...") %>
+      <%= editable_text_for(@journal, :caption, placeholder: "Enter a caption for your journal...") %>
     </p>
 
     <div class="actions">
@@ -19,7 +19,8 @@
         </div>
       <% end %>
 
-      <%= link_to "#", class: "icon-button large" do %>
+      <%= link_to scenes_active_journal_path(@journal),
+          class: "icon-button large" do %>
         <div class="icon-button--image">
           <img src="<%= asset_path('pencil') %>" />
         </div>
@@ -36,6 +37,7 @@
           Questions
         </div>
       <% end %>
+
     </div>
 
     <%= render partial: 'questions_card.html.erb' %>

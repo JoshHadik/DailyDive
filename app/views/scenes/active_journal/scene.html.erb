@@ -1,0 +1,42 @@
+<div class="flex-container">
+  <div class="active-journal flex-content">
+
+    <h1 class="h1-like response-question">
+      <%= editable_text_for(@response, :question) %>
+    </h1>
+
+    <p class="response-body">
+      <%= editable_text_for(@response, :body, placeholder: "Answer question...") %>
+    </p>
+
+    <div class="actions">
+      <%= link_to scenes_journal_entry_path(@journal, @entry), class: "icon-button dark" do %>
+        <div class="icon-button--image">
+          <img src="<%= asset_path('list') %>" />
+        </div>
+      <% end %>
+
+      <%= link_to scenes_active_journal_previous_question_path(@journal,
+                    entry: params[:entry],
+                    response: params[:response]),
+          method: :post, remote: true,
+          class: "icon-button dark previous" do %>
+        <div class="icon-button--image">
+          <img src="<%= asset_path('back') %>" />
+        </div>
+      <% end %>
+
+      <%= link_to scenes_active_journal_next_question_path(@journal,
+                    entry: params[:entry],
+                    response: params[:response]),
+          method: :post, remote: true,
+          class: "icon-button dark next" do %>
+        <div class="icon-button--image">
+          <img src="<%= asset_path('next') %>" />
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

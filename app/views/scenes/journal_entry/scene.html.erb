@@ -1,0 +1,34 @@
+<div class="flex-container">
+  <div class="journal-entry flex-content">
+
+    <h1 class="journal-title">
+      <%= link_to @journal.title, scenes_journal_path(@journal) %>
+    </h1>
+
+    <p class="date">
+      <%= @entry.created_at.strftime('%B %d, %Y') %>
+    </p>
+
+    <% @responses.each do |response| %>
+      <div class="response">
+        <h2 class="h1-like response-question">
+          <%= editable_text_for(response, :question, placeholder: "Enter question...") %>
+        </h2>
+        <p class="response-body">
+          <%= editable_text_for(response, :body, placeholder: "Enter question response...") %>
+        </p>
+      </div>
+    <% end %>
+
+    <div class="actions fixed-actions">
+      <%= link_to scenes_journal_path(@journal),
+          class: "icon-button dull" do %>
+        <div class="icon-button--image">
+          <img src="<%= asset_path('home') %>" />
+        </div>
+      <% end %>
+    </div>
+
+
+  </div>
+</div>
