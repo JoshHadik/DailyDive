@@ -2,15 +2,23 @@
 //   display: inline-block;
 // }
 //
-// .editable-text {
-//   cursor: pointer;
-//   display: block;
-//   white-space: pre-line;
-//   position: relative;
-//   min-width: 20px;
-//   padding-bottom: 5px;
-//   box-sizing: border-box;
-// }
+.editable-text {
+  // cursor: pointer;
+  // display: block;
+  // white-space: pre-line;
+  // position: relative;
+  // min-width: 20px;
+  // padding-bottom: 5px;
+  // box-sizing: border-box;
+}
+
+.editable-text:hover {
+  opacity: 0.6;
+}
+
+.editable-text:focus {
+  opacity: 1;
+}
 //
 // .editable-text:focus {
 //   cursor: text;

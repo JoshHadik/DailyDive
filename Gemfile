@@ -40,7 +40,7 @@ gem 'jquery-rails'
 gem 'devise'
 
 # Use dynamic_text gem
-gem 'dynamic_text', "~> 0.0.4"
+gem 'dynamic_text', "~> 0.0.5"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
