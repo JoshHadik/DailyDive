@@ -5,11 +5,12 @@ rvm:
 services:
   - postgresql
 env:
-  - DB=pgsql
-  - RAILS_ENV=test
+  global:
+    - DB=pgsql
+    - RAILS_ENV=test
 
-before_script:
-  - psql -c 'CREATE DATABASE Prototype_test;' -U postgres
+# before_script:
+#   - psql -c 'CREATE DATABASE Prototype_test;' -U postgres
 
 script:
   - bundle exec rake db:setup
