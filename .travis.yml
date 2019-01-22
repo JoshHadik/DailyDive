@@ -1,7 +1,19 @@
+# Travis CI Configuration
+language: ruby
+rvm:
+  - 2.6.0
+services:
+  - postgresql
+env:
+  - DB=pgsql
+  - RAILS_ENV=test
+
 before_script:
   - psql -c 'CREATE DATABASE Prototype_test;' -U postgres
 
 script:
+  - bundle exec rake db:setup
+  - bundle exec rake db:test:prepare
   - bundle exec rake
 
 deploy:
