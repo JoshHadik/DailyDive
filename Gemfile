@@ -47,8 +47,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -58,6 +60,20 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+# Gemfile
+group :test do
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'rails-controller-testing'
+  gem 'site_prism'
 end
 
 

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :journals, dependent: :destroy
+  has_many :journals, dependent: :destroy #TT
 
   def create_journal(journal)
     journal.owner = self

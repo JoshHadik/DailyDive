@@ -1,7 +1,7 @@
 class Journal < ApplicationRecord
-  belongs_to :owner, class_name: "User", foreign_key: "user_id"
-  has_many :questions
-  has_many :entries
+  belongs_to :owner, class_name: "User", foreign_key: "user_id" #TT
+  has_many :questions, dependent: :destroy #TT
+  has_many :entries, dependent: :destroy #TT
 
   def new_question(options={})
     Question.new(journal: self, **options)
