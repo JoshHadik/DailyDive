@@ -1,2 +1,2 @@
 web: bundle exec rails server -p $PORT
-release: ./.prepare-app.sh
+release: chmod u+x ./.prepare-app.sh
