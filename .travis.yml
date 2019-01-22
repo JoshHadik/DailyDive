@@ -1,0 +1,6 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_API_KEY
+  app:
+    devmaster: daily-dive-staging
