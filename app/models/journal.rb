@@ -3,19 +3,21 @@ class Journal < ApplicationRecord
   has_many :questions, dependent: :destroy #TT
   has_many :entries, dependent: :destroy #TT
 
-  def new_question(options={})
-    Question.new(journal: self, **options)
-  end
+  # def new_question(options={})
+  #   Question.new(journal: self, **options)
+  # end
 
   def create_question(question_params = {})
-    new_question(question_params).save
+    Question.create(**question_params, journal: self)
+  end #TT
+
+  def ordered_questions
+    questions.order(created_at: :asc)
   end
 
-  def create_entry
-    entry = Entry.create(journal: self)
-    questions.each_with_index do |question, index|
-      entry.create_response(question: question.body, position: index + 1)
+  def create_entry_with_questions
+    Entry.create(journal: self).tap do |entry|
+      entry.create_responses_from_questions(*ordered_questions)
     end
-    return entry
-  end
+  end #TT
 end

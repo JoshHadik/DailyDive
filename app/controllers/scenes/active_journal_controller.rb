@@ -28,9 +28,11 @@ class Scenes::ActiveJournalController < Scenes::BaseController
 
   def exit_entry
     should_delete_entry = true
+
     @entry.responses.each do |response|
       should_delete_entry = false if !response.body.nil?
     end
+
     delete_entry if should_delete_entry
     redirect_to scene_path(:current_journal)
   end
@@ -42,7 +44,7 @@ class Scenes::ActiveJournalController < Scenes::BaseController
   end
 
   def new_entry
-    @entry = current_journal.create_entry
+    @entry = current_journal.create_entry_with_questions
   end
 
   def set_entry

@@ -1,20 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # :confirmable, :lockable, :timeoutable, and :trackable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :github]
-
-  has_one :journal, dependent: :destroy #TT
-
-  def create_journal(journal)
-    journal.owner = self
-    journal.save
-    return journal
-  end
-
-  def get_or_create_journal
-    self.journal || create_starter_journal
-  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -24,6 +12,18 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
+
+  has_one :journal, dependent: :destroy #TT
+
+  # def create_journal(journal)
+  #   journal.owner = self
+  #   journal.save
+  #   return journal
+  # end
+
+  def get_or_create_journal
+    self.journal || create_starter_journal
+  end #TT
 
   private
 
@@ -40,5 +40,5 @@ class User < ApplicationRecord
     ]
 
     self.journal = journal
-  end
+  end #PT (through #get_or_create_journal)
 end
