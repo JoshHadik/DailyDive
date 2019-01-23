@@ -1,5 +1,4 @@
 class Scenes::AuthController < Scenes::BaseController
-
   def scene
     @user = User.new
   end

@@ -9,7 +9,7 @@
   <%= f.submit "Sign up" %>
 <% end %>
 
-<%= render partial: 'oauth_links' %>
+<%= render_prop :oauth_links %>
 
 <div class="card-action">
   Already have an account? <%= link_to "Login", "#", class: "show-login-tab" %>

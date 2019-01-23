@@ -1,5 +1,6 @@
 <%= form_with(model: question,
-              url: scenes_journal_add_question_path(journal_id), class: "new-question-form") do |form| %>
+              url: action_path(:add_question),
+              class: "new-question-form") do |form| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :github]
 
-  has_many :journals, dependent: :destroy #TT
+  has_one :journal, dependent: :destroy #TT
 
   def create_journal(journal)
     journal.owner = self
@@ -12,6 +12,9 @@ class User < ApplicationRecord
     return journal
   end
 
+  def get_or_create_journal
+    self.journal || create_starter_journal
+  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -20,5 +23,22 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
+  end
+
+  private
+
+  def create_starter_journal
+    journal = Journal.new(title: "Daily Dive", caption: "Take control of your life one day at a time!")
+
+    journal.questions << [
+      Question.new(body: "What are you grateful for?"),
+      Question.new(body: "What were some highlights from today?"),
+      Question.new(body: "What was your biggest struggle of the day?"),
+      Question.new(body: "What do you think led to that struggle?"),
+      Question.new(body: "How can you overcome that struggle in the future?"),
+      Question.new(body: "Overall, how would you say today went?")
+    ]
+
+    self.journal = journal
   end
 end

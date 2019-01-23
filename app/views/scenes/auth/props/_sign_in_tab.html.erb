@@ -8,7 +8,7 @@
   <%= f.submit "Login" %>
 <% end %>
 
-<%= render partial: 'oauth_links' %>
+<%= render_prop :oauth_links %>
 
 <div class="card-action">
   New to Daily Dive? <%= link_to "Signup", "#", class: "show-signup-tab" %>

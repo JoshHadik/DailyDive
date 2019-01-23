@@ -51,7 +51,7 @@ $(document).on('turbolinks:load page:change', () => {
   })
 
   // Close card before redirecting to link
-  $(".card a").on('click', (e) => {
+  $(".card a").not('[data-remote=true]').on('click', (e) => {
     e.preventDefault();
     Card.hide(() => {
       window.location = $(e.currentTarget).attr("href");

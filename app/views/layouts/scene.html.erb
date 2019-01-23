@@ -15,7 +15,7 @@
     <%= render partial: "layouts/style" %>
     <p id="notice"><%= notice %></p>
     <% if current_user %>
-      <%= link_to "Sign Out", scenes_sign_out_path, method: :post, remote: true  %>
+      <%= link_to "Sign Out", action_path(:sign_out), method: :post, remote: true  %>
     <% end %>
     <%= yield %>
   </body>

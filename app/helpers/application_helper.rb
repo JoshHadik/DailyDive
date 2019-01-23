@@ -17,4 +17,19 @@ module ApplicationHelper
     oauth_path = send("user_#{provider}_omniauth_authorize_path")
     link_to title, oauth_path, class: "oauth-link #{provider}-link"
   end
+
+  def action_path(scene, *args)
+    send("actions_#{scene}_path", *args)
+  end
+
+  def scene_path(scene, *args)
+    send("scenes_#{scene}_path", *args)
+  end
+
+
+  def render_prop(prop, **locals)
+    render(partial: "#{params[:controller]}/props/#{prop}", locals: locals)
+  end
+
+
 end

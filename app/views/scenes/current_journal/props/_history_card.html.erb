@@ -2,7 +2,7 @@
   <div class="card history-card">
     <div class="card-content">
       <p class="card-title">
-        <%= dynamic_text_for(@journal, :title, placeholder: "Untitled") %>
+        <%= dynamic_text_for(current_journal, :title, placeholder: "Untitled") %>
       </p>
       <p class="card-subtitle">
         History
@@ -15,7 +15,8 @@
               <%= link_to resource_entry_path(entry), method: :delete, class: "delete-entry-button", remote: true do %>
                 <%= image_tag("delete.svg") %>
               <% end %>
-              <%= link_to entry.created_at.strftime('%B %d, %Y'), scenes_journal_entry_path(@journal, entry) %>
+              <%= link_to entry.created_at.strftime('%B %d, %Y'),
+                          scene_path(:journal_entry, entry) %>
             </p>
           </li>
         <% end %>

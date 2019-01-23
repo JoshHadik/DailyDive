@@ -1,12 +1,11 @@
 <div class="auth-container">
   <div class="auth-card tabbed-card">
     <div class="tab active sign-in-tab">
-      <%= render partial: 'sign_in_tab' %>
+      <%= render_prop :sign_in_tab %>
     </div>
 
     <div class="tab sign-up-tab">
-      <%= render partial: 'sign_up_tab' %>
+      <%= render_prop :sign_up_tab %>
     </div>
-
   </div>
 </div>
