@@ -14,13 +14,7 @@ class User < ApplicationRecord
   end
 
   has_one :journal, dependent: :destroy #TT
-
-  # def create_journal(journal)
-  #   journal.owner = self
-  #   journal.save
-  #   return journal
-  # end
-
+  
   def get_or_create_journal
     self.journal || create_starter_journal
   end #TT

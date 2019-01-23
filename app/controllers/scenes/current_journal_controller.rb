@@ -2,7 +2,7 @@ class Scenes::CurrentJournalController < Scenes::BaseController
   before_action :authenticate_user!
 
   def scene
-    @questions = current_journal.questions.order(:id)
+    @questions = current_journal.ordered_questions
     @entries = current_journal.entries.order(created_at: :desc)
     @new_question = Question.new
   end

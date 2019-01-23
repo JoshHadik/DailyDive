@@ -11,6 +11,30 @@ RSpec.describe Journal, type: :model do
     FactoryBot.create(:journal)
   end
 
+  describe '#ordered_questions' do
+    let(:questions) do
+      [
+        FactoryBot.create(:question, position: 2),
+        FactoryBot.create(:question, position: 3),
+        FactoryBot.create(:question, position: 1)
+      ]
+    end
+
+    let(:ordered_questions) do
+      subject.ordered_questions
+    end
+
+    before do
+      subject.questions.push(*questions)
+    end
+
+    it 'sorts questions by position' do
+      expect(ordered_questions[0]).to eq(questions[2])
+      expect(ordered_questions[1]).to eq(questions[0])
+      expect(ordered_questions[2]).to eq(questions[1])
+    end
+  end
+
   describe '#create_question' do
     let(:question_attributes) do
       FactoryBot.attributes_for(:question, journal_id: nil)
@@ -56,7 +80,7 @@ RSpec.describe Journal, type: :model do
       questions.each_with_index do |question, index|
         response = entry.responses[index]
         expect(response.question).to eq(question.body)
-        expect(response.position).to eq(index + 1)
+        expect(response.position).to eq(question.position)
       end
     end
   end

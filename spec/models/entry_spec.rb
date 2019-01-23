@@ -34,17 +34,13 @@ RSpec.describe Entry, type: :model do
       FactoryBot.create(:question)
     end
 
-    let(:position) do
-      1
-    end
-
     let(:response) do
-      subject.create_response_from_question(question, position)
+      subject.create_response_from_question(question)
     end
 
     it 'creates a response with the correct attributes' do
       expect(response.question).to eq(question.body)
-      expect(response.position).to eq(position)
+      expect(response.position).to eq(question.position)
     end
 
     it 'creates a response that belongs to the correct entry' do
@@ -70,7 +66,7 @@ RSpec.describe Entry, type: :model do
       questions.each_with_index do |question, index|
         response = responses[index]
         expect(response.question).to eq(question.body)
-        expect(response.position).to eq(index + 1)
+        expect(response.position).to eq(question.position)
       end
     end
   end

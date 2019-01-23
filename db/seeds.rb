@@ -6,4 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: "test@example.com", password: "password")
+# User.create(email: "test@example.com", password: "password")
+
+Journal.all.each do |journal|
+  journal.questions.order(id: :asc).each_with_index do |question, index|
+    question.update(position: index + 1)
+  end
+end
