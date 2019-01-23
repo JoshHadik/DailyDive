@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   end
 
   scope module: :scenes, as: 'scenes' do
+    get 'auth', to: 'auth#scene', as: 'auth'
     get 'journal/:id', to: 'journal#scene', as: 'journal'
     post 'journal/:id/add_question/',
          to: 'journal#add_question',
          as: 'journal_add_question'
 
+    post 'sign_out', to: 'base#sign_out_action', as: 'sign_out'
     get 'journal/:id/go', to: 'active_journal#scene', as: 'active_journal'
     post 'journal/:id/go/next/',
          to: 'active_journal#next',

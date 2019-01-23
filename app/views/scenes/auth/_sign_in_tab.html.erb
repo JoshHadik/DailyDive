@@ -1,0 +1,13 @@
+<h1>Login</h1>
+
+<%= form_for(@user, url: session_path(@user)) do |f| %>
+  <%= f.email_field :email, autocomplete: "email", placeholder: "Email" %>
+
+  <%= f.password_field :password, autocomplete: "password", placeholder: "Password" %>
+
+  <%= f.submit "Login" %>
+<% end %>
+
+<div class="card-action">
+  New to Daily Dive? <%= link_to "Signup", "#", class: "show-signup-tab" %>
+</div>
