@@ -1,15 +1,15 @@
 class Scenes::JournalController < Scenes::BaseController
+  before_action :set_journal
   before_action :authenticate_user!
+  before_action :restrict_access_to_journal_owner!
 
   def scene
-    @journal = Journal.find(params[:id])
     @questions = @journal.questions.order(:id)
     @entries = @journal.entries.order(created_at: :desc)
     @new_question = Question.new
   end
 
   def add_question
-    @journal = Journal.find(params[:id])
     @question = Question.new(question_params)
     @question.journal_id = @journal.id
 
@@ -26,5 +26,15 @@ class Scenes::JournalController < Scenes::BaseController
   # Never trust parameters from the scary internet, only allow the white list through.
   def question_params
     params.require(:question).permit(:body, :journal_id)
+  end
+
+  def set_journal
+    @journal = Journal.find(params[:id])
+  end
+
+  def restrict_access_to_journal_owner!
+    unless @journal.owner.id == current_user.id
+      redirect_to root_path, notice: "Must be signed in to #{@journal.owner.email} to access the route for this wave"
+    end
   end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'scenes/my_journals#scene'
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   scope '/resources', module: :resources, as: 'resource' do
     resources :journals

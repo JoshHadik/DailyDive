@@ -39,6 +39,9 @@ gem 'jquery-rails'
 # Use devise for authentication
 gem 'devise'
 
+# Setup omniauth providers
+gem 'omniauth-github'
+
 # Use dynamic_text gem
 gem 'dynamic_text', "~> 0.0.5"
 

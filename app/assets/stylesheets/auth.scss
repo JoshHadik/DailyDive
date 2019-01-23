@@ -46,9 +46,6 @@
   box-sizing: border-box;
 }
 
-
-
-
 .auth-card h1 {
   font-size: 2.5em;
   margin-bottom: 80px;
@@ -77,25 +74,44 @@
   }
 }
 
-.auth-card input[type=submit] {
-  background-color: #491DFF;
-  color: white;
+.auth-card input[type=submit],
+.oauth-links a {
   border: none;
   display: block;
-  margin: 60px auto 0;
+  margin: 5px auto 0;
   width: 250px;
   padding: 15px 0;
   font-size: 1.3em;
-  text-transform: uppercase;
   border-radius: 50px;
+  box-sizing: border-box;
   // width: 200px;
+}
+
+.auth-card input[type=submit] {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #491DFF;
+  color: white;
+  text-transform: uppercase;
+}
+
+
+.oauth-links a {
+  border-width: 3px;
+  border-style: solid;
+  font-weight: 600;
+}
+
+.oauth-links .github-link {
+  color: blue;
+  border-color: blue;
+}
+
+.oauth-links .github-link:hover {
+  background-color: blue;
+  color: white;
 }
 
 .auth-card input[type=submit]:hover {
   cursor: pointer;
-}
-
-
-.auth-card input {
-
 }
