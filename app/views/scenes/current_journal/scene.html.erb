@@ -1,12 +1,15 @@
 <div class="flex-container">
   <div class="journal flex-content">
+    <%= link_to "#", class: "settings", data: { action: "showCard", "card-tag": "settings" } do %>
+      <%= image_tag(asset_path('settings')) %>
+    <% end %>
 
     <h1 class="h1-like journal-title">
-      <%= editable_text_for(current_journal, :title) %>
+      <%= dynamic_text_for(current_journal, :title) %>
     </h1>
 
     <p class="journal-caption">
-      <%= editable_text_for(current_journal, :caption, placeholder: "Enter a caption for your journal...") %>
+      <%= dynamic_text_for(current_journal, :caption, placeholder: "Enter a caption for your journal...") %>
     </p>
 
     <div class="actions">
@@ -37,10 +40,10 @@
           Questions
         </div>
       <% end %>
-
     </div>
 
     <%= render_prop :questions_card %>
     <%= render_prop :history_card %>
+    <%= render_prop :settings_card %>
   </div>
 </div>

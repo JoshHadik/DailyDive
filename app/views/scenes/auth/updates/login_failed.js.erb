@@ -1,0 +1,12 @@
+<%= content_for(:failure_message) do %>
+  <div class="form-error" style="display: none;">
+    Email or password was incorrect.
+  </div>
+<% end %>
+
+
+$('.sign-in-tab').html(
+  `<%= j render_prop 'sign_in_tab' %>`
+)
+
+showFormError()

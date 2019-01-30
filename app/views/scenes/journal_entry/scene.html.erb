@@ -1,17 +1,23 @@
 <div class="flex-container">
   <div class="journal-entry flex-content">
-    <h1 class="journal-title">
-      <%= link_to current_journal.title, scene_path(:current_journal) %>
-    </h1>
+    <div class="journal-heading">
+      <h1 class="journal-title">
+        <%= link_to current_journal.title, scene_path(:current_journal) %>
+      </h1>
 
-    <p class="date">
-      <%= @entry.created_at.strftime('%B %d, %Y') %>
-    </p>
+      <p class="date">
+        <%= @entry.created_at.strftime('%B %d, %Y') %>
+      </p>
+    </div>
 
-    <% @responses.each do |response| %>
-      <%= render_prop 'response', response: response %>
-    <% end %>
+    <ul class="responses">
+      <% @responses.each do |response| %>
+        <li class="response-item">
+          <%= render_prop 'response', response: response %>
+        </li>
+      <% end %>
+    </ul>
 
-    <%= render_prop 'actions_bar' %>
+    <!-- <%= render_prop 'actions_bar' %> -->
   </div>
 </div>

@@ -1,4 +1,4 @@
-class Scenes::CurrentJournalController < Scenes::BaseController
+class Scenes::CurrentJournalController < SceneController
   before_action :authenticate_user!
 
   def scene

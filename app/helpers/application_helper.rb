@@ -31,5 +31,9 @@ module ApplicationHelper
     render(partial: "#{params[:controller]}/props/#{prop}", locals: locals)
   end
 
+  def form_for(*args, **opts, &block)
+    super(*args, **({builder: FormBuilder}.merge(opts)), &block)
+  end
+
 
 end

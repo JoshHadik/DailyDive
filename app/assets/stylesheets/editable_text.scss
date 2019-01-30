@@ -19,6 +19,30 @@
 .editable-text:focus {
   opacity: 1;
 }
+
+.editable-text:focus {
+  background-color: white;
+  color: black;
+  outline: none;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.editable-text:focus[placeholder]::before {
+  color: lightgray;
+}
+
+.response-body .editable-text:focus {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  padding: 0px;
+}
+
+.response-body .editable-text:focus[placeholder]::before {
+  color: lightgray;
+}
 //
 // .editable-text:focus {
 //   cursor: text;

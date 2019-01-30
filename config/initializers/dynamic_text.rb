@@ -1,3 +1,3 @@
 DynamicText.configure do |config|
-  config.path_prefix = "resource"
+  config.resource_scope = "resources"
 end

@@ -1,4 +1,4 @@
-class Scenes::BaseController < ApplicationController
+class SceneController < ApplicationController
   layout 'scene'
 
   helper_method :current_journal

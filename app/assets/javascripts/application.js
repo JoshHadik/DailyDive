@@ -12,6 +12,7 @@
 //
 //= require dynamic_text/js
 //= require jquery
+//= require jquery-ui
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

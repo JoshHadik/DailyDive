@@ -1,6 +1,11 @@
-<h1>Login</h1>
 
-<%= form_for(@user, url: session_path(@user)) do |f| %>
+<header class="form-header">
+  <h1>Login</h1>
+  <%= yield(:failure_message) %>
+</header>
+
+<%= form_for(@user, url: action_path(:login, @user), remote: true) do |f| %>
+
   <%= f.email_field :email, autocomplete: "email", placeholder: "Email" %>
 
   <%= f.password_field :password, autocomplete: "password", placeholder: "Password" %>

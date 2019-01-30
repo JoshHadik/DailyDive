@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   scope '/resources', module: :resources, as: 'resource' do
-    resources :journals
-    resources :questions
-    resources :responses
-    resources :entries
+    resources :journals, only: [:update, :destroy]
+    resources :questions, only: [:update, :destroy]
+    resources :responses, only: [:update, :destroy]
+    resources :entries, only: [:update, :destroy]
   end
 
   # Scenes
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get 'auth', to: 'auth#scene', as: 'auth'
     get 'go', to: 'active_journal#scene', as: 'active_journal'
     get 'entry/:id', to: 'journal_entry#scene', as: 'journal_entry'
+
+    get 'card', to: 'card#scene'
   end
 
   # action_add_question_to_current_journal_path
@@ -25,6 +27,11 @@ Rails.application.routes.draw do
     scope '/current_journal', controller: :current_journal do
       post :add_question, as: 'add_question'
       post 'delete_question/:id', action: 'delete_question', as: 'delete_question'
+    end
+
+    scope '/auth', controller: :auth do
+      post :login, as: 'login'
+      post :signup, as: 'signup'
     end
 
     scope '/go', controller: :active_journal do

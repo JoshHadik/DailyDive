@@ -1,4 +1,4 @@
-class Scenes::ActiveJournalController < Scenes::BaseController
+class Scenes::ActiveJournalController < SceneController
   before_action :authenticate_user!
   before_action :set_entry, only: [ :previous, :next ]
 

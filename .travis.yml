@@ -8,10 +8,6 @@ env:
   global:
     - DB=pgsql
     - RAILS_ENV=test
-
-# before_script:
-#   - psql -c 'CREATE DATABASE Prototype_test;' -U postgres
-
 script:
   - bundle exec rake db:setup
   - bundle exec rake db:test:prepare
@@ -23,3 +19,5 @@ deploy:
     secure: $HEROKU_API_KEY
   app:
     devmaster: daily-dive-staging
+  on:
+    branch: master

@@ -1,23 +1,22 @@
 $(document).on('turbolinks:load page:change', () => {
 
-
-  $(".show-signup-tab").on("click", (e) => {
+  $(".tabbed-card").on("click", ".show-signup-tab", (e) => {
     e.preventDefault();
     const $target = $(e.currentTarget);
     const $currentTab = $target.closest('.tab');
     const $tabCard = $currentTab.closest('.tabbed-card');
-    const $tabToShow = $tabCard.find('.sign-up-tab');
+    const $tabToShow = $tabCard.find('.signup-tab');
 
     $currentTab.removeClass("active");
     $tabToShow.addClass("active");
   });
 
-  $(".show-login-tab").on("click", (e) => {
+  $(".tabbed-card").on("click", ".show-login-tab", (e) => {
     e.preventDefault();
     const $target = $(e.currentTarget);
     const $currentTab = $target.closest('.tab');
     const $tabCard = $currentTab.closest('.tabbed-card');
-    const $tabToShow = $tabCard.find('.sign-in-tab');
+    const $tabToShow = $tabCard.find('.login-tab');
 
     $currentTab.removeClass("active");
     $tabToShow.addClass("active");

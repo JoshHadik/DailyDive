@@ -1,0 +1,19 @@
+<%= form_for(current_user, url: registration_path(:user), html: { method: :put }) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Enter new password" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm new password" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :current_password, autocomplete: "off", placeholder: "Enter current password" %>
+  </div>
+
+  <%= f.submit "Update" %>
+<% end %>

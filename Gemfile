@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Jquery
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Use devise for authentication
 gem 'devise'
@@ -43,7 +44,8 @@ gem 'devise'
 gem 'omniauth-github'
 
 # Use dynamic_text gem
-gem 'dynamic_text', "~> 0.0.5"
+# gem 'dynamic_text', "~> 0.0.5"
+gem 'dynamic_text', path: '~/Developer/Gems/dynamic_text'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
