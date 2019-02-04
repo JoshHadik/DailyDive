@@ -16,23 +16,6 @@ class User < ApplicationRecord
   has_one :journal, dependent: :destroy #TT
 
   def get_or_create_journal
-    self.journal || create_starter_journal
-  end #TT
-
-  private
-
-  def create_starter_journal
-    journal = Journal.new(title: "Daily Dive", caption: "Take control of your life one day at a time!")
-
-    journal.questions << [
-      Question.new(body: "What are you grateful for?", position: 1),
-      Question.new(body: "What were some highlights from today?", position: 2),
-      Question.new(body: "What was your biggest struggle of the day?", position: 3),
-      Question.new(body: "What do you think led to that struggle?", position: 4),
-      Question.new(body: "How can you overcome that struggle in the future?", position: 5),
-      Question.new(body: "Overall, how would you say today went?",  position: 6)
-    ]
-
-    self.journal = journal
-  end #PT (through #get_or_create_journal)
+    self.journal || JournalSeed.build_initial_journal(self)
+  end #CT
 end

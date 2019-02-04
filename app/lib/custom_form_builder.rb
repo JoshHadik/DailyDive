@@ -1,4 +1,4 @@
-class FormBuilder < ActionView::Helpers::FormBuilder
+class CustomFormBuilder < ActionView::Helpers::FormBuilder
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::CaptureHelper
   include ActionView::Helpers::TextHelper

@@ -11,8 +11,10 @@ Devise.setup do |config|
   # config.secret_key = '68bafdf55a2aecf0609c65821762bdc49cec3db9d1f4be429cac5ca60a098f3f2a91e7eb50659221ff8a97b8bd9101c9724993b38feff1387c42e06d40662c9a'
 
   # config/initializers/devise.rb
+  require "#{Rails.root}/lib/devise/custom_failure_app"
+
   config.warden do |manager|
-    manager.failure_app = DeviseFailureApp
+    manager.failure_app = CustomFailureApp
   end
 
   # ==> Controller configuration

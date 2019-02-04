@@ -1,8 +1,6 @@
 class SceneController < ApplicationController
   layout 'scene'
 
-  helper_method :current_journal
-
   def render_update(update, **locals)
     render("#{params[:controller]}/updates/#{update}", locals: locals)
   end
@@ -16,6 +14,8 @@ class SceneController < ApplicationController
       @current_journal ||= current_user.get_or_create_journal
     end
   end
+
+  helper_method :current_journal
 
   def sign_out_action
     sign_out_and_redirect(:user)

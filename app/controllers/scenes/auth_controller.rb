@@ -10,7 +10,7 @@ class Scenes::AuthController < SceneController
     if @user.save
       sign_in_and_redirect(@user)
     else
-      render_update(:sign_up_failed)
+      render_update(:signup_failed)
     end
   end
 
@@ -21,15 +21,9 @@ class Scenes::AuthController < SceneController
       sign_in_and_redirect(@user)
     else
       @user = User.new(user_params)
-      render_update(:sign_in_failed)
+      render_update(:login_failed)
     end
   end
-
-  # private
-  # # Never trust parameters from the scary internet, only allow the white list through.
-  # def question_params
-  #   params.require(:question).permit(:body, :journal_id)
-  # end
 
   private
 
@@ -37,7 +31,6 @@ class Scenes::AuthController < SceneController
     redirect_to('/') if user_signed_in?
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:password, :email, :password_confirmation)
   end

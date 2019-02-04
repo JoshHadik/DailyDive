@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, controllers: {
+    omniauth_callbacks: "omniauth"
+  }
 
   scope '/resources', module: :resources, as: 'resource' do
     resources :journals, only: [:update, :destroy]
