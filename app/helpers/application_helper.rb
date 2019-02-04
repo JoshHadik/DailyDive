@@ -7,12 +7,19 @@ module ApplicationHelper
     send("scenes_#{scene}_path", *args)
   end
 
-  def render_prop(prop, **locals)
-    render(partial: "#{params[:controller]}/props/#{prop}", locals: locals)
+  def render_prop(path=nil, prop, **locals)
+    props_path(path)
+    render(partial: "#{params[:controller]}/#{props_path(path)}/#{prop}", locals: locals)
   end
 
   def form_for(*args, **opts, &block)
     opts[:builder] ||= CustomFormBuilder
     super(*args, **opts, &block)
+  end
+
+  private
+
+  def props_path(path)
+    return path ? "props/#{path.to_s.pluralize}" : "props"
   end
 end

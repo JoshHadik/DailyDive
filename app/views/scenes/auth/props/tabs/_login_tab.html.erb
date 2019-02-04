@@ -1,4 +1,3 @@
-
 <header class="form-header">
   <h1>Login</h1>
   <%= yield(:failure_message) %>
@@ -13,7 +12,7 @@
   <%= f.submit "Login" %>
 <% end %>
 
-<%= render_prop :oauth_links %>
+<%= render_prop :links, :oauth_links %>
 
 <div class="card-action">
   New to Daily Dive? <%= link_to "Signup", "#", class: "show-signup-tab" %>

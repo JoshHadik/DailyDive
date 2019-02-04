@@ -15,6 +15,15 @@ class Scenes::CurrentJournalController < SceneController
     end
   end
 
+  def update_account
+    @user = User.new(user_params)
+    if @user.save
+      puts "PASSED"
+    else
+      render_update(:account_update_failed)
+    end
+  end
+
   def delete_question
     @question = Question.find(params[:id])
     @question.destroy
@@ -23,5 +32,9 @@ class Scenes::CurrentJournalController < SceneController
   private
   def question_params
     params.require(:question).permit(:body, :journal_id)
+  end
+
+  def user_params
+    params.require(:user).permit(:password, :email, :password_confirmation, :current_password)
   end
 end

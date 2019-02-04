@@ -13,7 +13,7 @@
     <ul class="responses">
       <% @responses.each do |response| %>
         <li class="response-item">
-          <%= render_prop 'response', response: response %>
+          <%= render_prop :response, response: response %>
         </li>
       <% end %>
     </ul>
