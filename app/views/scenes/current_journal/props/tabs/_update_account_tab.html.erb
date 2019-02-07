@@ -1,0 +1,20 @@
+<div class="card-content">
+  <p class="card-title">
+    Account Settings
+  </p>
+  <%= render_prop(:form, :update_account_form) %>
+</div>
+
+<div class="card-actions">
+  <ul class="card-links">
+    <li>
+      <%= link_to "Signout", "/users/sign_out", method: :delete, class: "show-signup-tab" %>
+    </li>
+    <li>
+      <%= link_to "Change Password", "#", data: { action: "change-tab", "tab-reference": "update-password-tab" } %>
+    </li>
+    <li>
+      <%= link_to "Delete Account", "#", data: { action: "change-tab", "tab-reference": "delete-account-tab" } %>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+<div class="card-content">
+  <p class="card-title">
+    Delete Account
+  </p>
+  <%= render_prop(:form, :delete_account_form) %>
+</div>
+
+<div class="card-actions">
+  <ul class="card-links">
+    <li>
+      <%= link_to "Back", "#", data: { action: "change-tab", "tab-reference": "update-account-tab" }  %>
+    </li>
+  </ul>
+</div>

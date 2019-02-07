@@ -22,4 +22,17 @@ $(document).on('turbolinks:load page:change', () => {
     $tabToShow.addClass("active");
   });
 
+  $("body").on("click", ".tabbed-card [data-action=change-tab]", (e) => {
+    console.log("HERE")
+    e.preventDefault();
+    const $target = $(e.target);
+    const tabReference = $target.data("tab-reference");
+    const $card = $target.closest('.card');
+    const $activeTab = $card.find('.tab.active');
+    const $tabToShow = $card.find(`.tab.${tabReference}`);
+
+    $activeTab.removeClass("active");
+    $tabToShow.addClass("active");
+  });
+
 })

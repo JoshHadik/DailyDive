@@ -41,9 +41,11 @@
         </div>
       <% end %>
     </div>
-
-    <%= render_prop :card, :questions_card %>
-    <%= render_prop :card, :history_card %>
-    <%= render_prop :card, :settings_card %>
   </div>
+</div>
+
+<div class="popup-cards">
+  <%= render_prop :card, :questions_card %>
+  <%= render_prop :card, :history_card %>
+  <%= render_prop :card, :settings_card %>
 </div>

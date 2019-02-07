@@ -250,3 +250,42 @@
 // .card-subtitle {
 //   font-size: 2em;
 // }
+
+
+.popup-cards .card {
+  display: none;
+}
+
+
+// Tabbed Card
+
+.tabbed-card .tab {
+  display: none;
+}
+
+.tabbed-card .tab.active {
+  display: block;
+}
+
+// .tabbed-card {
+//   position: relative;
+// }
+
+.tabbed-card .tab .card-action {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  left: 0;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.tabbed-card .tab .card-action a {
+  color: rgb(5, 168, 255);
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.tabbed-card .tab .card-action a:hover {
+  text-decoration: underline;
+}

@@ -1,25 +1,14 @@
-<div class="card-canvas settings-card-canvas" data-card-canvas="settings">
-  <div class="card form-card settings-card">
-    <div class="card-content">
-      <p class="card-title">
-        Account Settings
-      </p>
-      <%= render_prop(:form, :update_account_form) %>
-    </div>
+<div id="settings-card" class="card form-card tabbed-card settings-card">
 
-    <div class="card-actions">
-      <ul class="card-links">
-        <li>
-          <%= link_to "Signout", "/users/sign_out", method: :delete, class: "show-signup-tab" %>
-        </li>
-        <li>
-          <%= link_to "Delete Account", "#", class: "show-delete-tab" %>
-        </li>
-      </ul>
-    </div>
+  <div class="tab active update-account-tab">
+    <%= render_prop :tab, :update_account_tab %>
   </div>
 
-  <p class="close">
-    Close
-  </p>
+  <div class="tab update-password-tab">
+    <%= render_prop :tab, :update_password_tab %>
+  </div>
+
+  <div class="tab delete-account-tab">
+    <%= render_prop :tab, :delete_account_tab %>
+  </div>
 </div>

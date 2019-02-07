@@ -28,6 +28,9 @@ Rails.application.routes.draw do
 
     scope '/current_journal', controller: :current_journal do
       post :add_question, as: 'add_question'
+      put :update_account, as: 'update_account'
+      put :update_password, as: 'update_password'
+      put :delete_account, as: 'delete_account'
       post 'delete_question/:id', action: 'delete_question', as: 'delete_question'
     end
 
