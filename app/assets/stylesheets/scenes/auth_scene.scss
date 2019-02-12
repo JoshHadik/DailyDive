@@ -1,55 +1,5 @@
 
 
-// Form Card
-
-.form-card {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-card .card-content {
-  width: 100%;
-}
-
-.form-card .card-title {
-  font-size: 2.5em;
-  margin-bottom: 80px;
-}
-
-.form-card input[type=email],
-.form-card input[type=password],
-.form-card input[type=text] {
-  font-size: 1.5em;
-  border: none;
-  padding: 5px 0;
-  border-bottom: 1px solid #B1AEAE;
-  font-weight: 400;
-  margin-bottom: 40px;
-  width: 80%;
-  box-sizing: border-box;
-
-  &::placeholder {
-    color: #B1AEAE;
-  }
-}
-
-.form-card input[type=submit] {
-  border: none;
-  display: block;
-  margin: 50px auto;
-  width: 250px;
-  padding: 15px 0;
-  font-size: 1.3em;
-  border-radius: 50px;
-  box-sizing: border-box;
-  background-color: #491DFF;
-  color: white;
-  text-transform: uppercase;
-  // width: 200px;
-}
-
 // Auth Card
 
 .auth-card {
@@ -140,62 +90,6 @@
   cursor: pointer;
 }
 
-
-.form-field input[type=email],
-.form-field input[type=password],
-.form-field input[type=text] {
-  margin-bottom: 0px;
-  width: 100%;
-}
-
-.form-field {
-  padding-bottom: 25px;
-  margin-bottom: 15px;
-  width: 80%;
-  display: inline-block;
-  position: relative;
-}
-
-.form-field .error-tag {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: left;
-  display: inline-block;
-  margin-top: 5px;
-  // color: red;
-  font-weight: 600;
-  box-sizing: border-box;
-  height: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 25px;
-  background-color: rgb(185, 0, 0);
-  color: white;
-  right: 0;
-
-}
-
-.form-header h1 {
-  margin-bottom: 0px;
-}
-
-.form-header {
-  padding-bottom: 40px;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.form-error {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-top: 20px;
-  font-size: 1.3em;
-  color: red;
-  font-weight: 600;
-}
 
 
 .auth-card input[type=submit]:hover {

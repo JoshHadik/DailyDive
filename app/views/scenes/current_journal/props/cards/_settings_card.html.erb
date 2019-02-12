@@ -1,6 +1,10 @@
 <div id="settings-card" class="card form-card tabbed-card settings-card">
 
-  <div class="tab active update-account-tab">
+  <div class="tab active settings-options-tab">
+    <%= render_prop :tab, :settings_options_tab %>
+  </div>
+
+  <div class="tab update-account-tab">
     <%= render_prop :tab, :update_account_tab %>
   </div>
 

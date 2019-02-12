@@ -1,0 +1,56 @@
+.popup-canvas {
+  display: none;
+  min-height: 500px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 5;
+}
+
+.popup-canvas.active {
+  display: block;
+}
+
+.popup-canvas:hover {
+  cursor: pointer;
+}
+
+.popup-canvas .card:hover {
+  cursor: initial;
+}
+
+.popup-canvas .close {
+  color: #FF4545;
+  bottom: 5vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup-canvas .close:hover, .popup-canvas .close.jqhover {
+  text-decoration: underline;
+}
+
+.popup-canvas .card .screen {
+  display: none;
+}
+
+.popup-canvas .card .screen.active {
+  display: block;
+}
+
+// Show Card With Sreen
+
+// Hide Card
+
+// Change Screen
+
+//
+// .card-canvas {
+
+// }

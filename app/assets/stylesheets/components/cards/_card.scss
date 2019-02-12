@@ -1,48 +1,3 @@
-// Card Canvas Area
-
-.card-canvas {
-  display: none;
-  min-height: 500px;
-}
-
-.card-canvas:hover {
-  cursor: pointer;
-}
-
-.card-canvas .card:hover {
-  cursor: initial;
-}
-
-.card-canvas .close {
-  color: #FF4545;
-  bottom: 5vh;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.card-canvas .close:hover, .card-canvas .close.jqhover {
-  text-decoration: underline;
-}
-
-.card-canvas.active {
-  display: block;
-}
-
-.card-canvas {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  z-index: 5;
-}
-
-// Card
-
 .card {
   position: absolute;
   background-color: white;
@@ -81,6 +36,7 @@
 
 .card-subtitle {
   font-size: 2em;
+  margin-bottom: 50px;
 }
 
 .card-actions {
@@ -93,31 +49,18 @@
 }
 
 
-// NEW //
-
-
-
-
-
-// .journal-entry.flex-content {
-//   max-width: 100% !important;
-//   padding: 20px !important;
-//   font-size: 0.8em;
-//   margin: 0px !important;
-// }
-
 // Card
 
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  padding-top: 50px;
-}
-
-.mobile .card-container {
-  padding-top: 0px;
-}
+// .card-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: top;
+//   padding-top: 50px;
+// }
+//
+// .mobile .card-container {
+//   padding-top: 0px;
+// }
 
 // Static Card
 
@@ -151,23 +94,7 @@
 
 // Popup Card
 
-.popup-card {
-  position: absolute;
-  background-color: white;
-  color: black;
-  width: 620px;
-  max-width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 15px;
-  text-align: center;
-  box-sizing: border-box;
-  overflow: hidden;
-  bottom: 0;
-  top: 15vh;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
+
 
 // .card .card-action {
 //   position: absolute;
@@ -210,25 +137,15 @@
   margin-left: 5px;
 }
 
-.table-view {
-  width: 100%;
-  text-align: left;
-}
 
-.table-view-cell {
-  padding-left: 25px;
-  margin-bottom: 15px;
-  font-weight: 500;
-}
-
-.table-view .table-view-cell:last-of-type {
-  margin-bottom: 0px;
-}
+// .journal-entry.flex-content {
+//   max-width: 100% !important;
+//   padding: 20px !important;
+//   font-size: 0.8em;
+//   margin: 0px !important;
+// }
 
 
-.cell-content {
-  font-size: 1.5em;
-}
 
 //
 
@@ -252,40 +169,5 @@
 // }
 
 
-.popup-cards .card {
-  display: none;
-}
-
-
-// Tabbed Card
-
-.tabbed-card .tab {
-  display: none;
-}
-
-.tabbed-card .tab.active {
-  display: block;
-}
-
-// .tabbed-card {
-//   position: relative;
-// }
-
-.tabbed-card .tab .card-action {
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
-  left: 0;
-  font-size: 1.2em;
-  font-weight: 400;
-}
-
-.tabbed-card .tab .card-action a {
-  color: rgb(5, 168, 255);
-  font-weight: 600;
-  margin-left: 5px;
-}
-
-.tabbed-card .tab .card-action a:hover {
-  text-decoration: underline;
-}
+// .settings-options
+//

@@ -1,0 +1,45 @@
+<div class="card-content">
+  <p class="card-title">
+    Settings
+  </p>
+  <p class="card-subtitle">
+    Account
+  </p>
+</div>
+
+<ul class="settings-options">
+  <li class="settings-options-item">
+    <p class="list-item-content">
+      <%= link_to "Update Info", "#", data: { action: "change-tab", "tab-reference": "update-account-tab" } %>
+    </p>
+  </li>
+  <li class="settings-options-item">
+    <p class="list-item-content">
+      <%= link_to "Signout", "/users/sign_out", method: :delete, class: "show-signup-tab" %>
+    </p>
+  </li>
+  <li class="settings-options-item">
+    <p class="list-item-content">
+      <%= link_to "Change Password", "#", data: { action: "change-tab", "tab-reference": "update-password-tab" } %>
+    </p>
+  </li>
+  <li class="settings-options-item">
+    <p class="list-item-content">
+      <%= link_to "Delete Account", "#", data: { action: "change-tab", "tab-reference": "delete-account-tab" } %>
+    </p>
+  </li>
+</ul>
+
+<div class="card-actions">
+  <ul class="card-links">
+    <li>
+
+    </li>
+    <li>
+
+    </li>
+    <li>
+
+    </li>
+  </ul>
+</div>

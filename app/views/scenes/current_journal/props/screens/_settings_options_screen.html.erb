@@ -1,0 +1,32 @@
+<div class="card-content">
+  <p class="card-title">
+    Settings
+  </p>
+  <p class="card-subtitle">
+    Account
+  </p>
+
+  <ul class="settings-options">
+    <li class="settings-options-item">
+      <p class="list-item-content">
+        <%= link_to "Update Info", "#", data: { action: "changeCardScreen", "screen-tag": "update-account" } %>
+      </p>
+    </li>
+    <li class="settings-options-item">
+      <p class="list-item-content">
+        <%= link_to "Signout", "/users/sign_out", method: :delete %>
+      </p>
+    </li>
+    <li class="settings-options-item">
+      <p class="list-item-content">
+        <%= link_to "Change Password", "#", data: { action: "changeCardScreen", "screen-tag": "update-password" } %>
+      </p>
+    </li>
+    <li class="settings-options-item">
+      <p class="list-item-content">
+        <%= link_to "Delete Account", "#", data: { action: "changeCardScreen", "screen-tag": "delete-account" } %>
+      </p>
+    </li>
+  </ul>
+
+</div>
