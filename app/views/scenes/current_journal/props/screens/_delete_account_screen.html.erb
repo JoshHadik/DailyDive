@@ -1,14 +1,17 @@
 <div class="card-content">
   <p class="card-title">
+    Settings
+  </p>
+  <p class="card-subtitle">
     Delete Account
   </p>
-  <%= render_prop(:form, :delete_account_form) %>
+  <%= render_card_form :delete_account %>
 </div>
 
 <div class="card-actions">
   <ul class="card-links">
     <li>
-      <%= link_to "Back", "#", data: { action: "changeCardScreen", "screen-tag": "settings-options" }  %>
+      <%= change_card_screen_link "Back", :settings_options %>
     </li>
   </ul>
 </div>

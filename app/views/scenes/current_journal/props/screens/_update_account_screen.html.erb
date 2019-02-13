@@ -3,16 +3,16 @@
     Settings
   </p>
   <p class="card-subtitle">
-    Account
+    Update Account
   </p>
-  <%= render_prop(:form, :update_account_form) %>
+  <%= render_card_form :update_account %>
 </div>
 
 
 <div class="card-actions">
   <ul class="card-links">
     <li>
-      <%= link_to "Back", "#", data: { action: "changeCardScreen", "screen-tag": "settings-options" }  %>
+      <%= change_card_screen_link "Back", :settings_options %>
     </li>
   </ul>
 </div>

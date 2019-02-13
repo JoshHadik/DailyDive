@@ -3,13 +3,13 @@
     Settings
   </p>
   <p class="card-subtitle">
-    Account
+    Options
   </p>
 
   <ul class="settings-options">
     <li class="settings-options-item">
       <p class="list-item-content">
-        <%= link_to "Update Info", "#", data: { action: "changeCardScreen", "screen-tag": "update-account" } %>
+        <%= change_card_screen_link "Update Info", :update_account %>
       </p>
     </li>
     <li class="settings-options-item">
@@ -19,12 +19,12 @@
     </li>
     <li class="settings-options-item">
       <p class="list-item-content">
-        <%= link_to "Change Password", "#", data: { action: "changeCardScreen", "screen-tag": "update-password" } %>
+        <%= change_card_screen_link "Change Password", :update_password %>
       </p>
     </li>
     <li class="settings-options-item">
       <p class="list-item-content">
-        <%= link_to "Delete Account", "#", data: { action: "changeCardScreen", "screen-tag": "delete-account" } %>
+        <%= change_card_screen_link "Delete Account", :delete_account %>
       </p>
     </li>
   </ul>

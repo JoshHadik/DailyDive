@@ -64,3 +64,11 @@
 .popup-cards .card {
   display: none;
 }
+
+.card .screen {
+  display: none;
+}
+
+.card .screen.active {
+  display: initial;
+}

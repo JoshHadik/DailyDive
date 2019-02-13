@@ -87,7 +87,7 @@ $(document).on('turbolinks:load page:change', () => {
   })
 
   // Close card before redirecting to link
-  $("body").on('click', '.popup-canvas .card a.link', (event) => {
+  $("body").on('click', '.popup-canvas .card .outbound-link', (event) => {
     event.preventDefault();
     PopupDisplay.hide(() => {
       window.location = $(event.target).attr("href");

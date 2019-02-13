@@ -44,8 +44,8 @@ gem 'devise'
 gem 'omniauth-github'
 
 # Use dynamic_text gem
-# gem 'dynamic_text', "~> 0.0.5"
-gem 'dynamic_text', path: '~/Developer/Gems/dynamic_text'
+gem 'dynamic_text', "~> 0.0.7"
+# gem 'dynamic_text', path: '~/Developer/Gems/dynamic_text'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

@@ -17,8 +17,6 @@ Rails.application.routes.draw do
     get 'auth', to: 'auth#scene', as: 'auth'
     get 'go', to: 'active_journal#scene', as: 'active_journal'
     get 'entry/:id', to: 'journal_entry#scene', as: 'journal_entry'
-
-    get 'card', to: 'card#scene'
   end
 
   # action_add_question_to_current_journal_path
@@ -42,6 +40,10 @@ Rails.application.routes.draw do
     scope '/go', controller: :active_journal do
       post :next, as: 'next_question'
       post :previous, as: 'previous_question'
+    end
+
+    scope '/entry/:id', controller: :journal_entry do
+      post :delete_entry, as: 'delete_entry'
     end
   end
 

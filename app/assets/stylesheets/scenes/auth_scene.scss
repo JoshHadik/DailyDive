@@ -1,9 +1,43 @@
 
-
+// .auth-card input[type=submit] {
+//   margin-top: 50px;
+//   margin-bottom: 50px;
+//   background-color: #491DFF;
+//   color: white;
+//   text-transform: uppercase;
+// }
 // Auth Card
 
+
+// .auth-card form {
+//   width: 100%;
+// }
+
+// .auth-card {
+//   // font-family: "Avenir Next";
+// }
+
+// .auth-card input[type=email], .auth-card input[type=password] {
+//   font-size: 1.5em;
+//   border: none;
+//   padding: 5px 0;
+//   border-bottom: 1px solid #B1AEAE;
+//   font-weight: 400;
+//   margin-bottom: 40px;
+//   width: 80%;
+//   box-sizing: border-box;
+//
+//   &::placeholder {
+//     color: #B1AEAE;
+//   }
+// }
+
+// .auth-card {
+//   margin-top: 0px;
+//   max-height: 100vh;
+// }
+
 .auth-card {
-  margin: 50px auto 0;
   max-width: 100%;
   width: 550px;
   height: 800px;
@@ -15,40 +49,6 @@
   box-sizing: border-box;
 }
 
-// .auth-card {
-//   margin-top: 0px;
-//   max-height: 100vh;
-// }
-
-.auth-card h1 {
-  font-size: 2.5em;
-  margin-bottom: 80px;
-}
-
-.auth-card form {
-  width: 100%;
-}
-
-.auth-card {
-  font-family: "Avenir Next";
-}
-
-.auth-card input[type=email], .auth-card input[type=password] {
-  font-size: 1.5em;
-  border: none;
-  padding: 5px 0;
-  border-bottom: 1px solid #B1AEAE;
-  font-weight: 400;
-  margin-bottom: 40px;
-  width: 80%;
-  box-sizing: border-box;
-
-  &::placeholder {
-    color: #B1AEAE;
-  }
-}
-
-.auth-card input[type=submit],
 .oauth-links a {
   border: none;
   display: block;
@@ -60,15 +60,6 @@
   box-sizing: border-box;
   // width: 200px;
 }
-
-.auth-card input[type=submit] {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: #491DFF;
-  color: white;
-  text-transform: uppercase;
-}
-
 
 .oauth-links a {
   border-width: 3px;
@@ -86,16 +77,18 @@
   color: white;
 }
 
-.auth-card input[type=submit]:hover {
-  cursor: pointer;
+.auth-card .card-actions {
+  bottom: 30px;
+  font-size: 1.2em;
+  font-weight: 400;
 }
 
-
-
-.auth-card input[type=submit]:hover {
-  box-shadow: 2px 2px 5px 1px gray;
+.auth-card .card-actions a {
+  color: rgb(5, 168, 255);
+  font-weight: 600;
+  margin-left: 5px;
 }
 
-.auth-card input[type=submit]:active {
-  box-shadow: none;
+.auth-card .card-actions a:hover {
+  text-decoration: underline;
 }

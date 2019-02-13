@@ -1,5 +1,3 @@
-<h1>Sign Up</h1>
-
 <%= form_for(@user, url: action_path(:signup, @user), remote: true) do |f| %>
 
   <%= f.field_for(:email) do %>
@@ -18,7 +16,3 @@
 <% end %>
 
 <%= render_prop :links, :oauth_links %>
-
-<div class="card-action">
-  Already have an account? <%= link_to "Login", "#", class: "show-login-tab" %>
-</div>

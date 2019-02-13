@@ -54,7 +54,7 @@
   list-style-type: none;
   width: 100%;
   top: 0;
-  margin-top: 50px;
+  margin-top: 0px;
   vertical-align: text-top;
   overflow-x: scroll;
   padding-bottom: 50px;
@@ -66,7 +66,7 @@
 // Journal Entries
 
 .journal-entry-item {
-  padding-left: 35px;
+  // padding-left: 35px;
   position: relative;
   font-size: 1.4em;
   font-weight: 500;
@@ -83,28 +83,6 @@
   color: #05A2E3;
 }
 
-// Delete Journal Entry
-
-.journal-entry-item.active {
-  list-style-type: none;
-}
-
-.journal-entry-item .delete-entry-button {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  left: 0;
-  display: none;
-}
-
-.journal-entry-item:hover .delete-entry-button {
-  display: block;
-}
-
-.journal-entry-item.active .delete-entry-button {
-  display: block;
-}
-
 /* -- Questions Card -- */
 
 .edit-questions {
@@ -115,7 +93,7 @@
   list-style-position: outside;
   width: 100%;
   top: 0;
-  margin-top: 50px;
+  margin-top: 0px;
   vertical-align: text-top;
   overflow: scroll;
   padding-bottom: 50px;
@@ -193,4 +171,38 @@
   color: white;
   font-weight: 600;
   margin-left: 3px;
+}
+
+.settings-options {
+  font-size: 1.2em;
+  display: inline-block;
+  text-align: left;
+  list-style-type: none;
+  width: 100%;
+  top: 0;
+  margin-top: 0px;
+  vertical-align: text-top;
+  overflow-x: scroll;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  padding-right: 1px;
+  padding-top: 1px;
+}
+
+.settings-options-item {
+  // padding-left: 25px;
+  position: relative;
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  vertical-align: bottom !important;
+}
+
+.settings-options-item .list-item-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.settings-options-item a:hover {
+  color: #05A2E3;
 }

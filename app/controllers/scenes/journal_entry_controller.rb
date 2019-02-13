@@ -3,6 +3,12 @@ class Scenes::JournalEntryController < SceneController
 
   def scene
     @entry = current_journal.entries.find(params[:id])
-    @responses = @entry.responses.order(position: :asc)
+    @responses = @entry.responses.order(created_at: :desc)
+  end
+
+  def delete_entry
+    @entry = current_journal.entries.find(params[:id])
+    @entry.destroy
+    redirect_to '/'
   end
 end

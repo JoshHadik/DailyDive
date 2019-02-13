@@ -8,7 +8,7 @@ class Scenes::CurrentJournalController < SceneController
   end
 
   def add_question
-    if current_journal.create_question(question_params)
+    if @question = current_journal.create_question(question_params)
       render_update(:question_added)
     else
       render json: @question.errors, status: :unprocessable_entity

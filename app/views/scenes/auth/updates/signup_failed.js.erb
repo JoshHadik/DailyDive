@@ -1,2 +1,4 @@
-$('.signup-tab').html("<%= j render_prop 'tab', 'signup_tab' %> ")
+$('#signup-card-form').html(
+  `<%= j render_prop 'form', 'signup_form' %>`
+)
 showErrorTags()

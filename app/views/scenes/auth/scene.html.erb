@@ -1,11 +1,6 @@
 <div class="auth-container">
-  <div class="auth-card tabbed-card">
-    <div class="tab active login-tab">
-      <%= render_prop :tab, :login_tab %>
-    </div>
-
-    <div class="tab signup-tab">
-      <%= render_prop :tab, :signup_tab %>
-    </div>
+  <div class="auth-card card">
+    <%= render_screen :login, :active %>
+    <%= render_screen :signup %>
   </div>
 </div>

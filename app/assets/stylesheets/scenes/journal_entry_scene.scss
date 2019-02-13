@@ -53,3 +53,39 @@
 // .response-item .editable-text:focus {
 //   background-color: #491DFF;
 // }
+
+.journal-entry .trash {
+  margin: 40px auto 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.journal-entry .trash img {
+  display: inline-block;
+  max-width: 30px;
+  max-height: 30px;
+  opacity: 0.5;
+}
+
+.journal-entry .trash img:hover {
+  opacity: 1;
+}
+
+
+.action-menu {
+  width: 100%;
+  background-color: black;
+  padding: 15px;
+  font-size: 1.2em;
+  text-align: center;
+  // color: black;
+  position: fixed;
+  top: 0;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.action-menu:hover {
+  text-decoration: underline;
+}

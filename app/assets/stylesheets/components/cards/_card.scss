@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-.card-content {
+.card .screen {
   max-height: 100%;
   overflow: scroll;
 
@@ -23,7 +23,11 @@
   overflow: -moz-scrollbars-none;  // Firefox
 }
 
-.card-content::-webkit-scrollbar {
+.card-content {
+
+}
+
+.card .screen::-webkit-scrollbar {
   display: none;  // Safari and Chrome
 }
 

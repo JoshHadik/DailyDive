@@ -52,7 +52,7 @@ class Scenes::ActiveJournalController < SceneController
   end
 
   def set_response
-    @response = @entry.responses.find_by(position: params[:question])
+    @response = @entry.responses.order(created_at: :desc)[params[:question].to_i - 1]
   end
 
   def journal_in_progress?
@@ -68,7 +68,7 @@ class Scenes::ActiveJournalController < SceneController
   end
 
   def on_last_question?
-    last_question.position == params[:question].to_i
+    params[:question].to_i >= @entry.responses.length
   end
 
   def last_question

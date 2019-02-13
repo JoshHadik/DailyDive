@@ -1,9 +1,5 @@
-<header class="form-header">
-  <h1>Login</h1>
-  <%= yield(:failure_message) %>
-</header>
-
 <%= form_for(@user, url: action_path(:login, @user), remote: true) do |f| %>
+  <%= yield(:failure_message) %>
 
   <%= f.email_field :email, autocomplete: "email", placeholder: "Email" %>
 
@@ -13,7 +9,3 @@
 <% end %>
 
 <%= render_prop :links, :oauth_links %>
-
-<div class="card-action">
-  New to Daily Dive? <%= link_to "Signup", "#", class: "show-signup-tab" %>
-</div>

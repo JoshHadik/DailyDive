@@ -8,7 +8,7 @@ class Journal < ApplicationRecord
   end #TT
 
   def create_question(question_params = {})
-    Question.create(**question_params, journal: self)
+    Question.create(question_params.merge(journal: self))
   end #TT
 
   def create_entry_with_questions

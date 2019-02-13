@@ -1,18 +1,8 @@
-<%= form_with(model: question,
+<%= form_for(question,
               url: action_path(:add_question),
-              class: "new-question-form") do |form| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+              class: "new-question-form",
+              remote: 'true') do |f| %>
 
-      <ul>
-      <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= form.text_field :body, placeholder: "Enter new question..." %>
-  <%= form.submit "Add" %>
+  <%= f.text_field :body, placeholder: "Enter new question..." %>
+  <%= f.submit "Add" %>
 <% end %>

@@ -1,8 +1,11 @@
+<div class="action-menu">
+  <%= link_to "Home", "/" %>
+</div>
 <div class="flex-container">
   <div class="journal-entry flex-content">
     <div class="journal-heading">
       <h1 class="journal-title">
-        <%= link_to current_journal.title, scene_path(:current_journal) %>
+        <%= current_journal.title %>
       </h1>
 
       <p class="date">
@@ -17,6 +20,12 @@
         </li>
       <% end %>
     </ul>
+
+    <%= link_to action_path(:delete_entry),
+        method: :post, remote: true, class: "trash" do %>
+          <%= image_tag("trash.svg") %>
+    <% end %>
+
 
     <!-- <%= render_prop 'actions_bar' %> -->
   </div>
