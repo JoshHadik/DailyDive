@@ -52,7 +52,7 @@ class Scenes::ActiveJournalController < SceneController
   end
 
   def set_response
-    @response = @entry.responses.order(created_at: :desc)[params[:question].to_i - 1]
+    @response = @entry.ordered_responses[params[:question].to_i - 1]
   end
 
   def journal_in_progress?
