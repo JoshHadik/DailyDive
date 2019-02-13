@@ -13,6 +13,10 @@ class Entry < ApplicationRecord
     })
   end #TT
 
+  def ordered_responses
+    responses.order(created_at: :asc)
+  end
+
   def create_responses_from_questions(*questions)
     questions.map do |question|
       create_response_from_question(question)
