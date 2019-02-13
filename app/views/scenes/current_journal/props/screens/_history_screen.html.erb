@@ -1,0 +1,20 @@
+<div class="card-content">
+  <p class="card-title">
+    <%= dynamic_text_for(current_journal, :title, placeholder: "Untitled") %>
+  </p>
+  <p class="card-subtitle">
+    History
+  </p>
+
+  <ul class="journal-entries">
+    <% @entries.each do |entry| %>
+      <li class="journal-entry-item">
+        <p class="list-item-content">
+          <%= link_to entry.created_at.strftime('%B %d, %Y'),
+                      scene_path(:journal_entry, entry),
+                      class: "outbound-link" %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>

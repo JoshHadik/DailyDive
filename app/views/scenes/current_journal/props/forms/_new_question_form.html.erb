@@ -1,0 +1,8 @@
+<%= form_for(question,
+              url: action_path(:add_question),
+              class: "new-question-form",
+              remote: 'true') do |f| %>
+
+  <%= f.text_field :body, placeholder: "Enter new question..." %>
+  <%= f.submit "Add" %>
+<% end %>

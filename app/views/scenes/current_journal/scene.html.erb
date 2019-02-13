@@ -1,0 +1,62 @@
+<div class="flex-container">
+  <div class="journal flex-content">
+
+    <%= show_popup_card_link :settings_options, class: "settings" do %>
+      <%= image_tag(asset_path('settings')) %>
+    <% end %>
+
+    <h1 class="h1-like journal-title">
+      <%= dynamic_text_for(current_journal, :title) %>
+    </h1>
+
+    <p class="journal-caption">
+      <%= dynamic_text_for(current_journal, :caption, placeholder: "Enter a caption for your journal...") %>
+    </p>
+
+    <div class="actions">
+      <%= show_popup_card_link :history, class: "icon-button dull" do %>
+        <div class="icon-button--image">
+          <img src="<%= asset_path('history') %>" />
+        </div>
+        <div class="icon-button--text">
+          History
+        </div>
+      <% end %>
+
+      <%= link_to scene_path(:active_journal),
+          class: "icon-button large" do %>
+        <div class="icon-button--image">
+          <img src="<%= asset_path('pencil') %>" />
+        </div>
+        <div class="icon-button--text">
+          Start
+        </div>
+      <% end %>
+
+      <%= show_popup_card_link :questions, class: "icon-button dull" do %>
+        <div class="icon-button--image">
+          <img src="<%= asset_path('question') %>" />
+        </div>
+        <div class="icon-button--text">
+          Questions
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="popup-canvas">
+  <div class="popup-card card">
+    <%= render_screen :questions %>
+    <%= render_screen :history %>
+    <%= render_screen :questions %>
+    <%= render_screen :delete_account %>
+    <%= render_screen :update_account %>
+    <%= render_screen :update_password %>
+    <%= render_screen :settings_options %>
+    <%= render_screen :history %>
+  </div>
+  <p class="close">
+    Close
+  </p>
+</div>

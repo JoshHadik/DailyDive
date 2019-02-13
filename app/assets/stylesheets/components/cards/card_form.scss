@@ -1,0 +1,131 @@
+// Form Card
+
+// .card-form {
+//   display: flex;
+//   text-align: center;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.card-form {
+  width: 100%;
+}
+
+// .card-form .card-title {
+//   font-size: 2.5em;
+//   margin-bottom: 80px;
+// }
+
+.card-form input[type=email],
+.card-form input[type=password],
+.card-form input[type=text] {
+  font-size: 1.5em;
+  border: none;
+  padding: 5px 0;
+  border-bottom: 1px solid #B1AEAE;
+  font-weight: 400;
+  margin-bottom: 40px;
+  width: 80%;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #B1AEAE;
+  }
+}
+
+.card-form input[type=submit] {
+  border: none;
+  display: block;
+  margin: 50px auto;
+  width: 250px;
+  padding: 15px 0;
+  font-size: 1.3em;
+  border-radius: 50px;
+  box-sizing: border-box;
+  background-color: #491DFF;
+  color: white;
+  text-transform: uppercase;
+  // width: 200px;
+}
+
+
+.form-field input[type=email],
+.form-field input[type=password],
+.form-field input[type=text] {
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.form-field {
+  padding-bottom: 25px;
+  margin-bottom: 15px;
+  width: 80%;
+  display: inline-block;
+  position: relative;
+}
+
+.form-field .error-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  margin-top: 5px;
+  // color: red;
+  font-weight: 600;
+  box-sizing: border-box;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 25px;
+  background-color: rgb(185, 0, 0);
+  color: white;
+  right: 0;
+}
+
+
+.card-form {
+  // font-size: 2.5em;
+  position: relative;
+  margin-top: 40px;
+  padding-top: 40px;
+}
+
+.card-form .form-error {
+  position: absolute;
+  display: inline-block;
+  top: -20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  // margin-top: 20px;
+  font-size: 1.3em;
+  color: red;
+  font-weight: 600;
+}
+
+
+.card-form input[type=submit]:hover {
+  cursor: pointer;
+}
+
+.card-form input[type=submit]:hover {
+  box-shadow: 2px 2px 5px 1px gray;
+}
+
+.card-form input[type=submit]:active {
+  box-shadow: none;
+}
+
+// .carf-form
+
+
+.card-form .prompt {
+  width: 80%;
+  text-align: left;
+  display: inline-block;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+}

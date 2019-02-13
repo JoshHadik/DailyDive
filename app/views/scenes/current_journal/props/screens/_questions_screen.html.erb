@@ -1,0 +1,20 @@
+<div class="card-content">
+  <p class="card-title">
+    <%= dynamic_text_for(current_journal, :title, placeholder: "Untitled") %>
+  </p>
+  <p class="card-subtitle">
+    Questions
+  </p>
+
+  <ol class="edit-questions">
+    <% @questions.each do |question| %>
+      <%= render_prop :item, :edit_question_item, question: question %>
+    <% end %>
+  </ol>
+</div>
+
+<div class="card-actions">
+  <div class="add-question">
+    <%= render_prop :form, :new_question_form, question: @new_question %>
+  </div>
+</div>

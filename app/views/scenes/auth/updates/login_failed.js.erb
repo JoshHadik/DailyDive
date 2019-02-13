@@ -1,0 +1,12 @@
+<%= content_for(:failure_message) do %>
+  <div class="form-error" style="display: none;">
+    Email or password was incorrect.
+  </div>
+<% end %>
+
+
+$('#login-card-form').html(
+  `<%= j render_prop 'form', 'login_form' %>`
+)
+
+showFormError()

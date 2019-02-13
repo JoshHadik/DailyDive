@@ -1,0 +1,208 @@
+.journal {
+  min-height: 500px;
+  max-height: 800px;
+  position: relative;
+}
+
+.journal-title {
+  font-weight: 800;
+  font-size: 3.5em;
+}
+
+.journal-caption {
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.actions .icon-button {
+  vertical-align: middle;
+  margin-left: 50px;
+}
+
+.actions .icon-button:first-of-type {
+  margin-left: 0px;
+}
+
+.actions {
+  position: absolute;
+  text-align: center;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+}
+
+.fixed-actions {
+  bottom: 60px;
+  position: fixed;
+}
+
+.settings {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 20px;
+  height: 20px;
+}
+
+
+/* -- History Card -- */
+
+.journal-entries {
+  font-size: 1.2em;
+  display: inline-block;
+  text-align: left;
+  list-style-type: none;
+  width: 100%;
+  top: 0;
+  margin-top: 0px;
+  vertical-align: text-top;
+  overflow-x: scroll;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  padding-right: 1px;
+  padding-top: 1px;
+}
+
+// Journal Entries
+
+.journal-entry-item {
+  // padding-left: 35px;
+  position: relative;
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  vertical-align: bottom !important;
+}
+
+.journal-entry-item .list-item-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.journal-entry-item a:hover {
+  color: #05A2E3;
+}
+
+/* -- Questions Card -- */
+
+.edit-questions {
+  font-size: 1.2em;
+  display: inline-block;
+  text-align: left;
+  list-style-type: decimal;
+  list-style-position: outside;
+  width: 100%;
+  top: 0;
+  margin-top: 0px;
+  vertical-align: text-top;
+  overflow: scroll;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  padding-right: 1px;
+  padding-top: 1px;
+}
+
+// Edit Questions List Item
+
+.edit-question-item {
+  position: relative;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  vertical-align: bottom !important;
+}
+
+.edit-question-item > * {
+  font-weight: 400;
+}
+
+.edit-question-item .list-item-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// Delete Question Button
+
+.edit-question-item.active {
+  list-style-type: none;
+}
+
+.edit-question-item .delete-question-button {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: -40px;
+  display: none;
+}
+
+.edit-question-item.active .delete-question-button {
+  display: block;
+}
+
+// Add Question Form
+
+.add-question input[type="text"],
+.add-question input[type="submit"] {
+  font-size: 1.5em;
+  display: inline-block;
+  height: 50px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.add-question input[type="text"] {
+  border: 1px solid black;
+  color: black;
+  line-height: 1.5em;
+  width: 75%;
+  padding-left: 10px;
+  margin-right: 3px;
+}
+
+.add-question input[type="text"]::placeholder {
+  color: gray;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.add-question input[type="submit"] {
+  background-color: var(--background-color);
+  width: 80px;
+  color: white;
+  font-weight: 600;
+  margin-left: 3px;
+}
+
+.settings-options {
+  font-size: 1.2em;
+  display: inline-block;
+  text-align: left;
+  list-style-type: none;
+  width: 100%;
+  top: 0;
+  margin-top: 0px;
+  vertical-align: text-top;
+  overflow-x: scroll;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  padding-right: 1px;
+  padding-top: 1px;
+}
+
+.settings-options-item {
+  // padding-left: 25px;
+  position: relative;
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  vertical-align: bottom !important;
+}
+
+.settings-options-item .list-item-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.settings-options-item a:hover {
+  color: #05A2E3;
+}

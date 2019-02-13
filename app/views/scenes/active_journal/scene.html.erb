@@ -10,15 +10,15 @@
     </p>
 
     <div class="actions">
-      <%= link_to scenes_journal_entry_path(@journal, @entry), class: "icon-button dark" do %>
+      <%= link_to scene_path(:journal_entry, @entry), class: "icon-button dark" do %>
         <div class="icon-button--image">
           <img src="<%= asset_path('list') %>" />
         </div>
       <% end %>
 
-      <%= link_to scenes_active_journal_previous_path(@journal,
-                    entry: params[:entry],
-                    question: params[:question]),
+      <%= link_to action_path(:previous_question,
+                              entry: params[:entry],
+                              question: params[:question]),
           method: :post, remote: true,
           class: "icon-button dark previous" do %>
         <div class="icon-button--image">
@@ -26,9 +26,9 @@
         </div>
       <% end %>
 
-      <%= link_to scenes_active_journal_next_path(@journal,
-                    entry: params[:entry],
-                    question: params[:question]),
+      <%= link_to action_path(:next_question,
+                              entry: params[:entry],
+                              question: params[:question]),
           method: :post, remote: true,
           class: "icon-button dark next" do %>
         <div class="icon-button--image">

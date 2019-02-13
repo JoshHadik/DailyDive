@@ -1,6 +1,5 @@
-class Scenes::ActiveJournalController < ApplicationController
+class Scenes::ActiveJournalController < SceneController
   before_action :authenticate_user!
-  before_action :set_journal
   before_action :set_entry, only: [ :previous, :next ]
 
   def scene
@@ -13,7 +12,7 @@ class Scenes::ActiveJournalController < ApplicationController
 
   def next
     if on_last_question?
-      redirect_to scenes_journal_entry_path(@journal, @entry)
+      redirect_to scene_path(:journal_entry, @entry)
     else
       redirect_to_question(+1)
     end
@@ -29,11 +28,13 @@ class Scenes::ActiveJournalController < ApplicationController
 
   def exit_entry
     should_delete_entry = true
+
     @entry.responses.each do |response|
       should_delete_entry = false if !response.body.nil?
     end
+
     delete_entry if should_delete_entry
-    redirect_to scenes_journal_path(@journal)
+    redirect_to scene_path(:current_journal)
   end
 
   private
@@ -42,20 +43,16 @@ class Scenes::ActiveJournalController < ApplicationController
     @entry.destroy
   end
 
-  def set_journal
-    @journal = Journal.find(params[:id])
-  end
-
   def new_entry
-    @entry = @journal.create_entry
+    @entry = current_journal.create_entry_with_questions
   end
 
   def set_entry
-    @entry = @journal.entries.find(params[:entry])
+    @entry = current_journal.entries.find(params[:entry])
   end
 
   def set_response
-    @response = @entry.responses.find_by(position: params[:question])
+    @response = @entry.responses.order(created_at: :desc)[params[:question].to_i - 1]
   end
 
   def journal_in_progress?
@@ -63,7 +60,7 @@ class Scenes::ActiveJournalController < ApplicationController
   end
 
   def redirect_to_first_question
-    redirect_to scenes_active_journal_path(@journal, entry: @entry.id, question: 1)
+    redirect_to scene_path(:active_journal, entry: @entry.id, question: 1)
   end
 
   def on_first_question?
@@ -71,7 +68,7 @@ class Scenes::ActiveJournalController < ApplicationController
   end
 
   def on_last_question?
-    last_question.position == params[:question].to_i
+    params[:question].to_i >= @entry.responses.length
   end
 
   def last_question
@@ -79,7 +76,7 @@ class Scenes::ActiveJournalController < ApplicationController
   end
 
   def redirect_to_question(val)
-    redirect_to scenes_active_journal_path(@journal, {
+    redirect_to scene_path(:active_journal, {
       entry: @entry.id,
       question: params[:question].to_i + val
     })

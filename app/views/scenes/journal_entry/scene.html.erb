@@ -1,34 +1,32 @@
+<div class="action-menu">
+  <%= link_to "Home", "/" %>
+</div>
 <div class="flex-container">
   <div class="journal-entry flex-content">
+    <div class="journal-heading">
+      <h1 class="journal-title">
+        <%= current_journal.title %>
+      </h1>
 
-    <h1 class="journal-title">
-      <%= link_to @journal.title, scenes_journal_path(@journal) %>
-    </h1>
-
-    <p class="date">
-      <%= @entry.created_at.strftime('%B %d, %Y') %>
-    </p>
-
-    <% @responses.each do |response| %>
-      <div class="response">
-        <h2 class="h1-like response-question">
-          <%= editable_text_for(response, :question, placeholder: "Enter question...") %>
-        </h2>
-        <p class="response-body">
-          <%= editable_text_for(response, :body, placeholder: "Enter question response...") %>
-        </p>
-      </div>
-    <% end %>
-
-    <div class="actions fixed-actions">
-      <%= link_to scenes_journal_path(@journal),
-          class: "icon-button dull" do %>
-        <div class="icon-button--image">
-          <img src="<%= asset_path('home') %>" />
-        </div>
-      <% end %>
+      <p class="date">
+        <%= @entry.created_at.strftime('%B %d, %Y') %>
+      </p>
     </div>
 
+    <ul class="responses">
+      <% @responses.each do |response| %>
+        <li class="response-item">
+          <%= render_prop :response, response: response %>
+        </li>
+      <% end %>
+    </ul>
 
+    <%= link_to action_path(:delete_entry),
+        method: :post, remote: true, class: "trash" do %>
+          <%= image_tag("trash.svg") %>
+    <% end %>
+
+
+    <!-- <%= render_prop 'actions_bar' %> -->
   </div>
 </div>

@@ -1,9 +1,14 @@
-class Scenes::JournalEntryController < ApplicationController
+class Scenes::JournalEntryController < SceneController
   before_action :authenticate_user!
 
   def scene
-    @journal = Journal.find(params[:id])
-    @entry = @journal.entries.find(params[:entry_id])
-    @responses = @entry.responses.order(position: :asc)
+    @entry = current_journal.entries.find(params[:id])
+    @responses = @entry.responses.order(created_at: :desc)
+  end
+
+  def delete_entry
+    @entry = current_journal.entries.find(params[:id])
+    @entry.destroy
+    redirect_to '/'
   end
 end

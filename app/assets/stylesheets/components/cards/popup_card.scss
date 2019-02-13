@@ -1,0 +1,74 @@
+// Card Canvas Area
+
+.card-canvas {
+  display: none;
+  min-height: 500px;
+}
+
+.card-canvas:hover {
+  cursor: pointer;
+}
+
+.card-canvas .card:hover {
+  cursor: initial;
+}
+
+.card-canvas .close {
+  color: #FF4545;
+  bottom: 5vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-canvas .close:hover, .card-canvas .close.jqhover {
+  text-decoration: underline;
+}
+
+.card-canvas.active {
+  display: block;
+}
+
+.card-canvas {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 5;
+}
+
+// Popup Card
+
+// .popup-card {
+//   position: absolute;
+//   background-color: white;
+//   color: black;
+//   width: 620px;
+//   max-width: 100%;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   border-radius: 15px;
+//   text-align: center;
+//   box-sizing: border-box;
+//   overflow: hidden;
+//   bottom: 0;
+//   top: 15vh;
+//   border-bottom-right-radius: 0;
+//   border-bottom-left-radius: 0;
+// }
+
+.popup-cards .card {
+  display: none;
+}
+
+.card .screen {
+  display: none;
+}
+
+.card .screen.active {
+  display: initial;
+}

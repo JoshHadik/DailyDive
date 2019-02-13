@@ -1,0 +1,11 @@
+<%= form_for(@user, url: action_path(:login, @user), remote: true) do |f| %>
+  <%= yield(:failure_message) %>
+
+  <%= f.email_field :email, autocomplete: "email", placeholder: "Email" %>
+
+  <%= f.password_field :password, autocomplete: "password", placeholder: "Password" %>
+
+  <%= f.submit "Login" %>
+<% end %>
+
+<%= render_prop :links, :oauth_links %>

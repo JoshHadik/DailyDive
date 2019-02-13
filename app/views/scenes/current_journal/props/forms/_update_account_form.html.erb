@@ -1,0 +1,8 @@
+<%= form_for(current_user, url: action_path(:update_account), html: { method: :put }, remote: true) do |f| %>
+
+  <%= f.field_for(:email) do %>
+    <% f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+  <% end %>
+
+  <%= f.submit "Update" %>
+<% end %>

@@ -1,0 +1,4 @@
+$(".edit-questions").append(
+  "<%= j render_prop 'item', 'edit_question_item', question: @question %>"
+)
+$(".new_question #question_body").val("")

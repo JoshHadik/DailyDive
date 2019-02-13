@@ -1,0 +1,94 @@
+
+// .auth-card input[type=submit] {
+//   margin-top: 50px;
+//   margin-bottom: 50px;
+//   background-color: #491DFF;
+//   color: white;
+//   text-transform: uppercase;
+// }
+// Auth Card
+
+
+// .auth-card form {
+//   width: 100%;
+// }
+
+// .auth-card {
+//   // font-family: "Avenir Next";
+// }
+
+// .auth-card input[type=email], .auth-card input[type=password] {
+//   font-size: 1.5em;
+//   border: none;
+//   padding: 5px 0;
+//   border-bottom: 1px solid #B1AEAE;
+//   font-weight: 400;
+//   margin-bottom: 40px;
+//   width: 80%;
+//   box-sizing: border-box;
+//
+//   &::placeholder {
+//     color: #B1AEAE;
+//   }
+// }
+
+// .auth-card {
+//   margin-top: 0px;
+//   max-height: 100vh;
+// }
+
+.auth-card {
+  max-width: 100%;
+  width: 550px;
+  height: 800px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.oauth-links a {
+  border: none;
+  display: block;
+  margin: 5px auto 0;
+  width: 250px;
+  padding: 15px 0;
+  font-size: 1.3em;
+  border-radius: 50px;
+  box-sizing: border-box;
+  // width: 200px;
+}
+
+.oauth-links a {
+  border-width: 3px;
+  border-style: solid;
+  font-weight: 600;
+}
+
+.oauth-links .github-link {
+  color: blue;
+  border-color: blue;
+}
+
+.oauth-links .github-link:hover {
+  background-color: blue;
+  color: white;
+}
+
+.auth-card .card-actions {
+  bottom: 30px;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.auth-card .card-actions a {
+  color: rgb(5, 168, 255);
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.auth-card .card-actions a:hover {
+  text-decoration: underline;
+}

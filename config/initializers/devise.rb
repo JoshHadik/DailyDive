@@ -9,7 +9,14 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '68bafdf55a2aecf0609c65821762bdc49cec3db9d1f4be429cac5ca60a098f3f2a91e7eb50659221ff8a97b8bd9101c9724993b38feff1387c42e06d40662c9a'
-  
+
+  # config/initializers/devise.rb
+  require "#{Rails.root}/lib/devise/custom_failure_app"
+
+  config.warden do |manager|
+    manager.failure_app = CustomFailureApp
+  end
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -257,6 +264,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :github,
+    ENV['GITHUB_CLIENT_ID'],
+    ENV['GITHUB_CLIENT_SECRET'],
+    scope: 'user:email'
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

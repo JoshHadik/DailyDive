@@ -1,0 +1,91 @@
+.journal-entry {
+  width: 700px;
+  max-width: 90%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.journal-entry .journal-title {
+  font-weight: 800;
+  font-size: 2.2em;
+}
+
+.journal-entry .journal-title a:hover {
+  text-decoration: underline
+}
+
+.journal-entry .date {
+  font-weight: 400;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+}
+
+.journal-entry .response-question {
+  font-weight: 800;
+  position: relative;
+}
+
+.journal-entry .response-body {
+  text-align: left;
+  line-height: 1.5;
+  font-size: 2.2em;
+}
+
+.journal-entry {
+  background-color: white;
+  color: black;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 50px !important;
+  min-height: 0vh;
+}
+
+.responses .response-item {
+  margin-bottom: 30px;
+}
+
+.responses .response-item:last-of-type {
+  margin-bottom: 0px;
+}
+
+// .response-item .editable-text:focus {
+//   background-color: #491DFF;
+// }
+
+.journal-entry .trash {
+  margin: 40px auto 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.journal-entry .trash img {
+  display: inline-block;
+  max-width: 30px;
+  max-height: 30px;
+  opacity: 0.5;
+}
+
+.journal-entry .trash img:hover {
+  opacity: 1;
+}
+
+
+.action-menu {
+  width: 100%;
+  background-color: black;
+  padding: 15px;
+  font-size: 1.2em;
+  text-align: center;
+  // color: black;
+  position: fixed;
+  top: 0;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.action-menu:hover {
+  text-decoration: underline;
+}

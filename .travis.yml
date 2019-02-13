@@ -1,0 +1,21 @@
+# Travis CI Configuration
+language: ruby
+rvm:
+  - 2.6.0
+services:
+  - postgresql
+env:
+  global:
+    - DB=pgsql
+    - RAILS_ENV=test
+script:
+  - bundle exec rake db:setup
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_API_KEY
+  app:
+    devmaster: daily-dive

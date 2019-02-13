@@ -1,0 +1,10 @@
+<%= form_for(current_user, url: action_path(:delete_account), html: { method: :put }, remote: true) do |f| %>
+
+  <p class="prompt">Enter password to continue</p>
+
+  <%= f.field_for(:current_password) do %>
+    <% f.password_field :current_password, autocomplete: "off", placeholder: "Current password" %>
+  <% end %>
+
+  <%= f.submit "Delete Account" %>
+<% end %>
